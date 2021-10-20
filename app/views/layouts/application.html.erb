@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mainapp</title>
+  <head class="header" >
+    <title>Bee Your Best</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class='top-page-header'>
+      <div class='header-contents'>
+        <div class="header-logo-form">
+          <div class="BeeYourBest-icon">
+            <%= link_to image_tag("BeeYourBest_背景透明.png", class:"BeeYourBestBee-icon"), "/" %>
+          </div>
+          <div class="header-form">
+            <form method="get" action="#" class="search_container">
+              <input type="text" size="25" placeholder="　キーワード検索">
+              <input type="submit" value="&#xf002">
+            </form>
+          </div>
+        </div>
+        <%# <% if user_signed_in? %> 
+          <%# <li><%= link_to current_user.nickname, "#", class: "user-nickname" %>
+          <%# <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"  %>
+        <%# <% else %> 
+        <%= link_to 'ログイン', "#", class:"btn btn-border-shadow btn-border-shadow--radius" %>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <footer class="footer">
+    </footer>
   </body>
 </html>

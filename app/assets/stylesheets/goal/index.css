@@ -1,0 +1,29 @@
+.main-goal {
+  position: relative;
+}
+
+.left-goal {
+  position: absolute;
+  background-image: url(../../images/yellow_back.png);
+  width: 70vw;
+  height: 70vh;
+
+}
+
+.left-goal-back {
+
+}
+
+.test2 {
+}
+.test3 {
+  width: 100vw;
+  height: 72vh;
+  padding-left: 32vw;
+}
+.test4 {
+  background-color: #594F21;
+  width: 100vw;
+  height: 13vh;
+  padding-left: 32vw;
+}
