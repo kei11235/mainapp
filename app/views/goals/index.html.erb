@@ -1,13 +1,18 @@
+<%= render "shared/header"%>
+
 <div class="main-goal">
   <%= image_tag("yellow-back.png", class:"left-goal")%>
   <div class="left-absolute">
     <div class="left-size">
-      <div class="left-box">
-        <p>みんなと</p>
-        <p>頑張る</p>
-        <p>応援サイト</p>
-      </div>
-      <%= link_to '今すぐ始める！　　>', "#", class:"btn btn-flat" %>
+      <% if user_signed_in? %>
+      <% else %>
+        <div class="left-box">
+          <p>みんなと</p>
+          <p>頑張る</p>
+          <p>応援サイト</p>
+        </div>
+        <%= link_to '今すぐ始める！　　>', new_user_registration_path, class:"btn btn-flat" %>
+      <% end %>
     </div>
   </div>
 
@@ -15,4 +20,4 @@
   </div>
 </div>
 
-
+<%= render "shared/footer"%>
