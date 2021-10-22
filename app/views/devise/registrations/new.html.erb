@@ -11,9 +11,9 @@
 
     <%= form_with url: "#", class: 'registration-main', local: true do |f| %>
     <div class='form-wrap'>
-
       <%# <%= render 'shared/error_messages', model: f.object %>
       <div class="form-top">
+
         <div class="form-left">
           <div class="form-group">
             <div class='form-text-wrap'>
@@ -46,32 +46,44 @@
           </div>
         </div>
 
-        <div class="form-right">
-
+        <div class="form-middle">
           <div class="form-group">
             <div class='form-text-wrap'>
               <label class="form-text">年齢</label>
               <span class="indispensable">必須</span>
             </div>
-            <%= f.collection_select(:age_id, [], :id, :name, {}, {class:"select-box", id:"user-age"}) %>
+            <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box", id:"user-age"}) %>
           </div>
-
           <div class="form-group">
             <div class='form-text-wrap'>
               <label class="form-text">性別</label>
               <span class="indispensable">必須</span>
             </div>
-            <%= f.collection_select(:sex_id, [], :id, :name, {}, {class:"select-box", id:"user-sex"}) %>
+            <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"user-sex"}) %>
           </div>
-
           <div class="form-group">
             <div class='form-text-wrap'>
               <label class="form-text">職業</label>
               <span class="indispensable">必須</span>
             </div>
-            <%= f.collection_select(:profession_id, [], :id, :name, {}, {class:"select-box", id:"user-profession"}) %>
+            <%= f.collection_select(:profession_id, Profession.all, :id, :name, {}, {class:"select-box", id:"user-profession"}) %>
           </div>
+        </div>
 
+        <div class="form-right">
+          <div class="form-group">
+            <div class='form-text-wrap'>
+              <label class="form-text">アイコン</label>
+              <span class="indispensable">任意</span>
+            </div>
+            <div class="click-upload">
+              <p>
+                クリックしてファイルをアップロード
+              </p>
+              <div id="image-list"></div>
+              <%= f.file_field :image, id:"item-image" %>
+            </div>
+          </div>
           <div class="form-group">
             <div class='form-text-wrap'>
               <label class="form-text">がんばりたいこと！</label>
@@ -79,15 +91,14 @@
             </div>
             <%= f.text_area :explain, class:"form-explanation", id:"form-text", placeholder:"今、頑張りたいこと！（任意 200文字まで）　最近プログラミング言語を学び始めました。ちょうど昨日からJavaScriptの勉強を始めたので頑張っていきたいです！" ,rows:"7" ,maxlength:"200" %>
           </div>
-        </div>  
-      </div>
+        </div>
 
+      </div>
       <div class="form-bottom">
-          <div class='register-btn'>
-            <%= f.submit "会員登録" ,class:"register-red-btn" %>
-          </div>
+        <div class="btn btn-border-shadow btn-border-shadow--radius">
+          <%= f.submit "新規登録！", class:"form-submit" %>
+        </div>
       </div>
-
     </div>
     <% end %>
   </div>
