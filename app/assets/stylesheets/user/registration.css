@@ -11,8 +11,6 @@
   height: 96vh;
   width: 96vw;
   margin: 2vh 2vw;
-  /* ↓いらないかも */
-  background-color: rgb(255, 255, 0, .2);
 }
 .sign-field > .BeeYourBest-icon {
   position: absolute;
