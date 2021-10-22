@@ -1,0 +1,25 @@
+.footer {
+  background-color: #594F21;
+  width: 100vw;
+  height: 13vh;
+  padding-left: 32vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer-button {
+  height: 90%;
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.copywriter {
+  color: black;
+  font-size: 15px;
+  text-align: end;
+  white-space: nowrap;
+}

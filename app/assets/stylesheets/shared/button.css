@@ -1,0 +1,113 @@
+/* メインボタン */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.0rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color:#3E3200;
+  border-radius: 0.5rem;
+  margin-bottom: 7px;
+  white-space: nowrap;
+}
+a.btn-border-shadow--radius {
+  border-radius: 100vh;
+}
+a.btn-border-shadow {
+  padding: calc(1.5rem - 12px) 3rem 1.5rem;
+  background: #FDCE00;
+}
+a.btn-border-shadow:before {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 100%;
+  height: 100%;
+  content: "";
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: 5px solid #3E3200;
+  border-radius: 0.5rem;
+}
+a.btn-border-shadow--radius:before {
+  border-radius: 100vh;
+}
+a.btn-border-shadow:hover {
+  padding: calc(1.5rem - 6px) 3rem;
+}
+a.btn-border-shadow:hover:before {
+  top: 0;
+  left: 0;
+}
+
+/* left-goalボタン */
+.left-size > a.btn-flat {
+  overflow: hidden;
+  padding: 1.5rem 1rem 1.5rem 4rem ;
+  color: #FCF8E6;
+  border-radius: 0;
+  background: #594F21;
+  border-radius: 20px;
+  border: 4px solid #594F21;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+a.btn-flat span {
+  position: relative;
+}
+a.btn-flat:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  content: '';
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-80%) translateY(-25px);
+  transform: translateX(-85%) translateY(-15px);
+  border-radius: 50%;
+  background: #FDCE00;
+  z-index: -1;
+}
+.left-size > a.btn:hover {
+  color: #594F21;
+  z-index: 0;
+}
+a.btn-flat:hover:before {
+  width: 400px;
+  height: 420px;
+  -webkit-transform: translateX(-1%) translateY(-175px);
+  transform: translateX(-1%) translateY(-175px);
+}
+
+/* footerボタン */
+.footer-button > .btn {
+  margin-right: 15px;
+  font-size: 0.9rem;
+}
