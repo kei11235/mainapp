@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -36,6 +37,13 @@
     <%= yield %>
 
     <footer class="footer">
+      <div class="footer-button">
+        <%= link_to '100%の目標', "#", class:"btn btn-border-shadow btn-border-shadow--radius" %>
+        <%= link_to '達成した目標', "#", class:"btn btn-border-shadow btn-border-shadow--radius" %>
+        <%= link_to 'イイねした', "#", class:"btn btn-border-shadow btn-border-shadow--radius" %>
+        <%= link_to 'イイねされた', "#", class:"btn btn-border-shadow btn-border-shadow--radius" %>
+      </div>
+      <div class="copywriter">© 2021 Kei Tamoto</div>
     </footer>
   </body>
 </html>
