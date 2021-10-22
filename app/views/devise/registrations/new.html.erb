@@ -9,7 +9,7 @@
       新規登録
     </div>
 
-    <%= form_with url: "#", class: 'registration-main', local: true do |f| %>
+    <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
     <div class='form-wrap'>
       <%# <%= render 'shared/error_messages', model: f.object %>
       <div class="form-top">
@@ -95,9 +95,9 @@
 
       </div>
       <div class="form-bottom">
-        <div class="btn btn-border-shadow btn-border-shadow--radius">
+        <%# <div class="btn btn-border-shadow btn-border-shadow--radius"> %>
           <%= f.submit "新規登録！", class:"form-submit" %>
-        </div>
+        <%# </div> %>
       </div>
     </div>
     <% end %>
