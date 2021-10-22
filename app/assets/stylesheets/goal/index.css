@@ -6,12 +6,13 @@
   position: absolute;
   width: 30vw;
   height: 85vh;
-  background-image: url(yellow-back.png);
-  background-size: 30vw 85vh;
-  background-repeat:  no-repeat; 
-  /* padding: 2vh 4vw 2vh 1vw; */
 }
 
+.left-absolute {
+  position: absolute;
+  width: 30vw;
+  height: 85vh;
+}
 .left-size {
   width: 80%;
   height: 100%;
