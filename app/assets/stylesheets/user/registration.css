@@ -20,6 +20,7 @@
   font-family: "M PLUS Rounded 1c";
   text-align: center;
   font-size: 40px;
+  font-weight: bold;
 }
 
 .registration-main {
@@ -120,4 +121,5 @@
   left: 2em;
   border: none;
   background-color: #FDCE00;
+  color: #3E3200;
 }

@@ -107,6 +107,15 @@
   transition: 0.5s;
   position: absolute;
 }
+input[type=checkbox]:checked + .drawer-open span {
+  background: #B19000;
+  }
+input[type=checkbox]:checked + .drawer-open span:before {
+  background: #B19000;
+  }
+input[type=checkbox]:checked + .drawer-open span:after {
+  background: #B19000;
+  }
 /* 一番上の棒 */
 .drawer-open span:before {
   bottom: 18px;
@@ -122,20 +131,22 @@
 /* メニューのデザイン*/
 .drawer-content {
   width: 20%;
-  height: 35%;
+  height: 33.5%;
   position: fixed;
-  top: 16%;
-  left: 100%;/* メニューを画面外へ */
+  top: 17%;
+  left: 110%;/* メニューを画面外へ */
   z-index: 100;
   background: #594F21;
   transition: .5s;
-  box-shadow: 6px 6px 4px #594F21;
   padding: 1%;
-  border-radius: 10px;
+  box-shadow: 0px 0px 0px 10px #594F21;
+  border: 2px dashed #FDCE00;
+  border-radius: 20px;
+  white-space: nowrap;
 }
 
 #drawer-check:checked ~ .drawer-content {
-  top: 16%;
+  top: 17%;
   left: 79%;/* メニューを画面内へ */
 }
 /* メニューを閉じるための要素のデザイン*/

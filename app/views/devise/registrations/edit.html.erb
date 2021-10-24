@@ -5,12 +5,11 @@
       <%= link_to image_tag("BeeYourBest_背景透明.png", class:"BeeYourBestBee-icon"), "/" %>
     </div>
     <div class="registration">
-      新規登録
+      プロフィール
     </div>
 
     <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
-    <%# method: :patch, %>
-    <div class='form-wrap'>
+    <div class='form-wrap3'>
 
       <div class="form-top">
 
@@ -29,7 +28,15 @@
             </div>
             <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
           </div>
-         
+          <div class="talk">
+            <figure class="talk-Limg">
+              <%= image_tag "125012.png" %>
+            </figure>
+            <div class="talk-Ltxt">
+              <p class="talk-text">編集もできるよ！</p>
+            </div>
+          </div>
+          
         </div>
 
         <div class="form-middle">
@@ -75,8 +82,8 @@
 
       <div class="form-bottom">
         <div class="btn btn-border-shadow btn-border-shadow--radius">
-          　　　　　
-          <%= f.submit "新規登録！", class:"form-submit" %>
+          　　　　　　　　
+          <%= f.submit "編集を反映する！", class:"form-submit" %>
         </div>
       </div>
 

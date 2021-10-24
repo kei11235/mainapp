@@ -1,0 +1,70 @@
+.form-wrap3 {
+  width: 85%;
+  height: 65vh;
+  margin-top: 5vh;
+  padding-bottom: 20px;
+  background-color: #FCF8E6;
+  opacity: 0.85;
+  box-shadow: 6px 6px 4px #594F21;
+}
+
+
+.talk {
+  margin: 10vh 2vw;
+  }
+  .talk figure img {
+  width: 100%;
+  height: 100%;
+  }
+  p.talk-text {
+  margin: 0 0 8px;
+  font-family: "M PLUS Rounded 1c";
+  font-weight: bold;
+  }
+  p.talk-text:last-child {
+  margin-bottom: 0px;
+  }
+  /* 回り込み解除 */
+  .talk:after,.talk:before {
+  clear: both;
+  content: "";
+  display: block;
+  }
+
+
+  /* 左画像 */
+  .talk-Limg {
+  margin-left: 2px;
+  margin-top: -28px;
+  float: left;
+  width: 100px;
+  height: 100px;
+  transform: scale(-1, 1);
+  }
+  /* 左からの吹き出しテキスト */
+  .talk-Ltxt {
+  color: #594F21;
+  position: relative;
+  margin-left: 100px;
+  padding: 1.2em;
+  border: 3px solid #594F21;
+  border-radius: 5px;
+  width: 13.5em;
+  }
+  /* 左の三角形を作る */
+  .talk-Ltxt:before {
+  position: absolute;
+  content: '';
+  border: 10px solid transparent;
+  border-right: 10px solid #594F21;
+  top: 15px;
+  left: -20px;
+  }
+  .talk-Ltxt:after {
+  position: absolute;
+  content: '';
+  border: 10px solid transparent;
+  border-right: 10px solid #FCF8E6;
+  top: 15px;
+  left: -16px;
+  }
