@@ -131,6 +131,7 @@
   transition: .5s;
   box-shadow: 6px 6px 4px #594F21;
   padding: 1%;
+  border-radius: 10px;
 }
 
 #drawer-check:checked ~ .drawer-content {
