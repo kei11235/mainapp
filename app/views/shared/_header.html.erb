@@ -5,15 +5,34 @@
         <%= link_to image_tag("BeeYourBest_背景透明.png", class:"BeeYourBestBee-icon"), "/" %>
       </div>
       <div class="header-form">
-        <form method="get" action="#" class="search_container">
+        <%# <form method="get" action="#" class="search_container">
           <input type="text" size="25" placeholder="　キーワード検索">
           <input type="submit" value="&#xf002">
-        </form>
+        </form> %>
       </div>
     </div>
     <% if user_signed_in? %>
-      <%# <li><%= link_to current_user.nickname, "#", class: "user-nickname" %>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+
+      <div class="drawer">
+        <input type="checkbox" id="drawer-check" class="drawer-hidden" >
+        <label for="drawer-check" class="drawer-open"><span></span></label>
+        <label for="drawer-check" class="drawer-close"></label>
+
+        <nav class="drawer-content">
+          <ul class="drawer-list">
+            <li class="drawer-item">
+              <%= link_to 'プロフィール編集', edit_user_registration_path, class: "btn btn-border-shadow btn-border-shadow--radius" %>
+            </li>
+            <li class="drawer-item">
+              <%= link_to '目標を確認', "#", method: :delete, class:"btn btn-border-shadow btn-border-shadow--radius" %>
+            </li>
+            <li class="drawer-item">
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"btn btn-border-shadow btn-border-shadow--radius" %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
     <% else %>%
       <%= link_to 'ログイン', new_user_session_path, class:"btn btn-border-shadow btn-border-shadow--radius" %>
     <% end %>

@@ -14,14 +14,14 @@
 .header-contents {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .header-logo-form {
   width: 50%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  /* align-items: flex-end; */
 }
 
 .BeeYourBest-icon {
@@ -34,7 +34,7 @@
 }
 
 /* 検索form */
-.header-form{
+/* .header-form{
   width: 50%;
 }
 .search_container{
@@ -73,24 +73,84 @@
 }
 .search_container ::-webkit-input-placeholder {
   color: #594F21;
-}
+} */
 /* 検索form */
 
-.user-nickname {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
-  font-weight: bold;
+
+
+/* チェックボックスの非表示 */
+.drawer-hidden {
+  display: none;
 }
 
-.logout {
-  text-decoration: none;
-  color: #333333;
+/* ハンバーガーアイコンの設置スペース */
+.drawer-open {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 98;
+  cursor: pointer;
+  
+}
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+  content: '';
+  display: block;
+  height: 15px;
+  width: 60px;
+  border-radius: 3px;
+  background: #FDCE00;
+  transition: 0.5s;
+  position: absolute;
+}
+/* 一番上の棒 */
+.drawer-open span:before {
+  bottom: 18px;
+  width: 70px;
+  right: 0;
+}
+/* 一番下の棒 */
+.drawer-open span:after {
+  top: 18px;
+  width: 50px;
+  left: 10px;
+}
+/* メニューのデザイン*/
+.drawer-content {
+  width: 20%;
+  height: 35%;
+  position: fixed;
+  top: 16%;
+  left: 100%;/* メニューを画面外へ */
+  z-index: 100;
+  background: #594F21;
+  transition: .5s;
+  box-shadow: 6px 6px 4px #594F21;
+  padding: 1%;
 }
 
-.login {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: #333333;
+#drawer-check:checked ~ .drawer-content {
+  top: 16%;
+  left: 79%;/* メニューを画面内へ */
+}
+/* メニューを閉じるための要素のデザイン*/
+.drawer-close {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;/* 閉じるための要素を画面外へ */
+  z-index: 99;
+  transition: .5s;
+}
+#drawer-check:checked ~ .drawer-close {
+  left: 0;/* 閉じるための要素を画面内へ */
+}
+.drawer-item {
+  text-align: end;
+  margin-bottom: 20px;
 }

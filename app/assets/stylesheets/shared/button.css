@@ -116,6 +116,7 @@ a.btn-flat:hover:before {
 .btn,
 div.btn,
 button.btn {
+  position: relative;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.5;
@@ -139,6 +140,7 @@ button.btn {
   white-space: nowrap;
 }
 div.btn-border-shadow--radius {
+  height: 2.8em;
   border-radius: 100vh;
 }
 div.btn-border-shadow {

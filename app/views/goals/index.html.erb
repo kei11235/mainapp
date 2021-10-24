@@ -4,8 +4,17 @@
   <%= image_tag("yellow-back.png", class:"left-goal")%>
   <div class="left-absolute">
     <div class="left-size">
+
       <% if user_signed_in? %>
+        <div class="left-box">
+          <p>まずは</p>
+          <p></p>
+          <p>目標を作ろう</p>
+        </div>
+        <%= link_to '新しく目標を作る！　　', "#", class:"btn btn-flat" %>
+
       <% else %>
+      
         <div class="left-box">
           <p>みんなと</p>
           <p>頑張る</p>
@@ -13,6 +22,7 @@
         </div>
         <%= link_to '今すぐ始める！　　>', new_user_registration_path, class:"btn btn-flat" %>
       <% end %>
+
     </div>
   </div>
 

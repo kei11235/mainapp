@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        age_id: 年齢
+        sex_id: 性別
+        profession_id: お仕事
