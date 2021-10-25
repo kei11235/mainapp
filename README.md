@@ -53,7 +53,6 @@ ER図等を添付。
 - has_many :goals, through: :likes
 - has_many :likes
 - has_many :comments
-- has_one_attached :image
 
 ## goals テーブル
 
@@ -61,8 +60,7 @@ ER図等を添付。
 | ----------- | ---------- | ------------------------------ |
 | target      | string     | null: false                    |
 | reason      | text       |                                |
-| achievement | integer    | null: false                    |
-| time        | date       | null: false                    |
+| time        | datetime   | null: false                    |
 | user        | references | null: false, foreign_key: true |
 
 ### Association

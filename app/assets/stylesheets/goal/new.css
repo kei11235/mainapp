@@ -1,0 +1,18 @@
+.form-top {
+  height: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+.form-left4 {
+  width: 50%;
+}
+.form-right4 {
+  width: 50%;
+}
+.counter {
+  font-family: "M PLUS Rounded 1c";
+  font-weight: bold;
+  font-size: 2.0em;
+  text-align: center;
+  padding-top: 20px;
+}

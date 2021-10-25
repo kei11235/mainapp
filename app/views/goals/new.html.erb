@@ -1,0 +1,61 @@
+<div class="hony-field">
+  <%= image_tag("honey-back.jpg", class:"honey-back") %>
+  <div class="sign-field">
+    <div class="BeeYourBest-icon">
+      <%= link_to image_tag("BeeYourBest_背景透明.png", class:"BeeYourBestBee-icon"), "/" %>
+    </div>
+    <div class="registration">
+      目標を決めよう！
+    </div>
+
+    <%= form_with model: @goal, class: 'registration-main', local: true do |f| %>
+    <div class='form-wrap'>
+
+      <div class="form-top">
+        <div class="form-left4">
+          <div class="form-group">
+            <div class='form-text-wrap'>
+              <label class="form-text">目標</label>
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :target, class:"input-default", id:"target", placeholder:"例) オオスズメバチ", maxlength:"50", autofocus: true %>
+          </div>
+          <div class="form-group">
+            <div class='form-text-wrap'>
+              <label class="form-text">理由</label>
+              <span class="indispensable">任意</span>
+            </div>
+            <%= f.text_area :reason, class:"form-explanation", id:"reason", placeholder:"今、頑張りたいこと！（任意 200文字まで）　最近プログラミング言語を学び始めました。ちょうど昨日からJavaScriptの勉強を始めたので頑張っていきたいです！" ,rows:"5" ,maxlength:"200" %>
+          </div>
+          <div class="form-group">
+            <div class='form-text-wrap'>
+              <label class="form-text">この日までに終わらせる！！</label>
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.datetime_field :time, class:"input-default", id:"time", min:"2021-11-1T0:0" %>
+            <p class="counter", id ="counter"></p>
+          </div>
+        </div>
+
+        <div class="form-right4">
+
+          <div class="form-group">
+            <div class='form-text-wrap'>
+              <%= render 'shared/error_messages', model: f.object %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-bottom">
+        <div class="btn btn-border-shadow btn-border-shadow--radius">
+          　　　　　
+          <%= f.submit "目標決定！", class:"form-submit" %>
+        </div>
+      </div>
+
+    </div>
+    <% end %>
+  </div>
+</div>
