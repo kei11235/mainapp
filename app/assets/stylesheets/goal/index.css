@@ -42,3 +42,70 @@
   height: 72vh;
   padding-left: 32vw;
 }
+
+/* グラフなどの調整 */
+.mygoal-field {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: flex-end;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.goal-card {
+  padding-left: 2px;
+  margin: 0 10px;
+}
+.goal-card > span {
+  font-size: 1.1em;
+  border-bottom: 3px solid #594F21;
+  white-space: normal;
+}
+.limit > span {
+  font-size: 1.1em;
+}
+.bou-index-field {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.bou-goal-field2 {
+  width: 60%;
+  position: relative;
+  padding: 2%;
+}
+.bou-index {
+  width: 100%;
+  height: 300px;
+  border: 10px solid #594F21;
+  border-radius: 10px;
+}
+.bou-index2 {
+  position: absolute;
+  width: 93%;
+  background-color: #FDE165;
+  border: 10px solid #594F21;
+  border-radius: 10px;
+}
+.achievement {
+  text-align: center;
+}
+.achievement > span {
+  font-size: 2em;
+}
+.counter2 {
+  font-family: "M PLUS Rounded 1c";
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: center;
+  padding-top: 20px;
+}
+.goal-index-btn {
+  text-align: center;
+  font-size: 0.8em;
+}
+span > .task-submit {
+  background-color: red;
+}
+.new-goal {
+}

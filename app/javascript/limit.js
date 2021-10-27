@@ -1,13 +1,13 @@
-function time() {
-  const time = document.getElementById('time')
-  const counter = document.querySelector('.counter');
+function limit() {
+  const limit = document.getElementById('limit')
+  const counter = document.querySelector('.counter2');
 
     function time_limit() {
       //今の日時
       const d1 = new Date();
-      const time_1 = time.value.replace( '-', '/' ).replace( '-', '/' ).replace( 'T', ' ' ).replace( 'UTC', '' )
-
-      const d2 = new Date(time_1);
+      const limit_1 = limit.innerHTML.replace( '目標期日：', '' ).replace( '-', '/' ).replace( '-', '/' ).replace( '<span>', '').replace( '</span>', '')
+      console.log(limit_1)
+      const d2 = new Date(limit_1);
       const d3 = d2 - d1;
       const d3_Sec = Math.floor(d3 / 1000);
   
@@ -26,10 +26,10 @@ function time() {
         counter.setAttribute("style", "border-bottom: dashed 4px red;")
       } else if (d3 > 0) {
         counter.innerHTML = "あと、" + d4_Day + "日" + (d5_Hour < 10 ? '0' + d5_Hour : d5_Hour) + "時間" + (d6_Minute < 10 ? '0' + d6_Minute : d6_Minute) + "分" + (d7_Sec < 10 ? '0' + d7_Sec : d7_Sec) + "秒！";
-        counter.setAttribute("style", "border-bottom: dashed 4px #FDCE00;")
+        counter.setAttribute("style", "border-bottom: dashed 4px #594F21;")
       } else {
         counter.innerHTML = null
-        counter.removeAttribute("style", "border-bottom: dashed 4px #FDCE00;")
+        counter.removeAttribute("style", "border-bottom: dashed 4px #594F21;")
         counter.removeAttribute("style", "border-bottom: dashed 4px red;")
       }
       setTimeout(time_limit,1000);
@@ -38,4 +38,4 @@ function time() {
 
 }
 
-window.addEventListener('load', time);
+window.addEventListener('load', limit);
