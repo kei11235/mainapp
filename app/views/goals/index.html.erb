@@ -6,22 +6,84 @@
     <div class="left-size">
 
       <% if user_signed_in? %>
-        <div class="left-box">
-          <p>まずは</p>
-          <p>　</p>
-          <p>目標を作ろう</p>
-        </div>
-        <%= link_to '新しく目標を作る！　　', "#", class:"btn btn-flat" %>
 
-      <% else %>
-      
-        <div class="left-box">
-          <p>みんなと</p>
-          <p>頑張る</p>
-          <p>応援サイト</p>
-        </div>
-        <%= link_to '今すぐ始める！　　>', new_user_registration_path, class:"btn btn-flat" %>
-      <% end %>
+        <% if @goal.present?%>
+          <div class="mygoal-field">
+            <% @goal.each do |goal| %>
+              <div class="goal-card">
+                目標：
+                <span>
+                  <%= goal.targetm %>
+                </span>
+                <div id="limit" class="limit">
+                  目標期日：
+                  <span>
+                    <%=  goal.time.strftime("%Y-%m-%d %H:%M:%S") %>
+                  </span>
+                </div>
+                <p class="counter2", id ="counter"></p>
+                <div class="bou-index-field">
+                  <div class="bou-goal-field2">
+                    <div class="<%= "bou-index#{goal.id}" %>">
+                      <% num = (goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001)) * 100 %>
+                      <% numpx = "#{(300 * (1 - goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001))).floor(1)}px" %>
+
+                      <style>
+                        <%= ".bou-index#{goal.id}" %> {
+                          height: <%= numpx %>;
+                          position: absolute;
+                          width: 93%;
+                          background-color: #FDE165;
+                          border: 10px solid #594F21;
+                          border-radius: 10px;
+                        }
+                      </style>
+                    </div>
+
+                    <%= image_tag "rainbow.jpg", class:"bou-index" %>
+                    <div class="achievement">
+                      達成率
+                      <span>
+                        <%= num.ceil(1) %>
+                      </span>
+                      %
+                    </div>
+                  </div>
+                </div>
+                <div class="goal-btn">
+                  <div class="goal-index-btn">
+                    <%= link_to "目標の編集", edit_goal_path(goal.id), class: "task-submit" %>
+                    <%= link_to "タスクの移動", goal_completions_path(goal.id), class: "task-submit" %>
+                    <span><%= link_to "目標の削除", goal_path(goal.id), method: :delete, class: "task-submit" %></span>
+                  </div>
+                </div>
+
+
+              </div>
+
+            <% end %>
+          </div>
+            <%= link_to '新しく目標を作る！　　', new_goal_path, class:"btn btn-flat" %>
+
+
+
+          <% else %>
+            <div class="left-box">
+              <p>まずは</p>
+              <p>　</p>
+              <p>目標を作ろう</p>
+            </div>
+            <%= link_to '新しく目標を作る！　　', new_goal_path, class:"btn btn-flat" %>
+          <% end %>
+
+        <% else %>
+          <div class="left-box">
+            <p>みんなと</p>
+            <p>頑張る</p>
+            <p>応援サイト</p>
+          </div>
+          <%= link_to '今すぐ始める！　　>', new_user_registration_path, class:"btn btn-flat" %>
+        <% end %>
 
     </div>
   </div>

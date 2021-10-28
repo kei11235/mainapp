@@ -1,0 +1,24 @@
+.form-wrap4 {
+  width: 60%;
+  padding-bottom: 20px;
+  background-color: #FCF8E6;
+  opacity: 0.85;
+  box-shadow: 6px 6px 4px #594F21;
+}
+.form-top4 {
+  height: 70%;
+}
+.counter {
+  font-family: "M PLUS Rounded 1c";
+  font-weight: bold;
+  font-size: 2.0em;
+  text-align: center;
+  padding-top: 20px;
+}
+.form-bottom4 {
+  height: 30%;
+  margin: 4vh 2vw 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
