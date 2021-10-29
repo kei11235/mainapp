@@ -21,11 +21,14 @@
         <nav class="drawer-content">
           <ul class="drawer-list">
             <li class="drawer-item">
-              <%= link_to 'プロフィール編集', edit_user_registration_path, class: "btn btn-border-shadow btn-border-shadow--radius" %>
+              <%= link_to 'プロフィール', edit_user_registration_path, class: "btn btn-border-shadow btn-border-shadow--radius" %>
             </li>
-            <li class="drawer-item">
-              <%= link_to '目標を確認', "#", method: :delete, class:"btn btn-border-shadow btn-border-shadow--radius" %>
-            </li>
+            <% if @goal.present? %>
+              <% index_goal_id = current_user.goals.first %>
+              <li class="drawer-item">
+                <%= link_to '目標を確認', goal_path(index_goal_id.id), class:"btn btn-border-shadow btn-border-shadow--radius" %>
+              </li>
+            <% end %>
             <li class="drawer-item">
               <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"btn btn-border-shadow btn-border-shadow--radius" %>
             </li>

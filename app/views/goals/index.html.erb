@@ -7,7 +7,7 @@
 
       <% if user_signed_in? %>
 
-        <% if @goal.present?%>
+        <% if @goal.present? %>
           <div class="mygoal-field">
             <% @goal.each do |goal| %>
               <div class="goal-card">
@@ -21,7 +21,7 @@
                     <%=  goal.time.strftime("%Y-%m-%d %H:%M:%S") %>
                   </span>
                 </div>
-                <p class="counter2", id ="counter"></p>
+                <p class="counter", id ="counter"></p>
                 <div class="bou-index-field">
                   <div class="bou-goal-field2">
                     <div class="<%= "bou-index#{goal.id}" %>">
@@ -36,6 +36,7 @@
                           background-color: #FDE165;
                           border: 10px solid #594F21;
                           border-radius: 10px;
+                          z-index: 10;
                         }
                       </style>
                     </div>
@@ -88,7 +89,93 @@
     </div>
   </div>
 
+
+
+
+
+
+
   <div class="right-goal">
+    <div class="allgoal-field">
+      <% @goals.each do |goal| %>
+        <% num = (goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001)) * 100 %>
+        <% numpx = "#{(280 * (1 - goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001))).floor(1)}px" %>
+
+        <% if num.ceil(1) < 100 %>
+          <div class="allgoal-card">
+            目標：
+            <span>
+              <%= goal.targetm %>
+            </span>
+
+
+          <div id="likes_buttons_<%= goal.id %>">
+             <%= render partial: 'likes/like', locals: { goal: goal} %>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="limit" class="limit">
+              目標期日：
+              <span>
+                <%= goal.time.strftime("%Y-%m-%d %H:%M:%S") %>
+              </span>
+            </div>
+
+            <%= link_to goal_path(goal.id), class:"a" do %>
+              <div class="bou-index-field">
+                <div class="bou-goal-field2">
+                  <div class="<%= "allbou-index#{goal.id}" %>">
+
+                    <style>
+                      <%= ".allbou-index#{goal.id}" %> {
+                        height: <%= numpx %>;
+                        position: absolute;
+                        width: 93%;
+                        background-color: #FCF8E6;
+                        border: 10px solid #594F21;
+                        border-radius: 10px;
+                        z-index: 10;
+                      }
+                    </style>
+                  </div>
+
+                  <%= image_tag "rainbow.jpg", class:"allbou-index" %>
+                  <div class="achievement">
+                    達成率
+                    <span>
+                      <%= num.ceil(1) %>
+                    </span>
+                    %
+                  </div>
+                </div>
+              </div>
+
+              <div class="goal-user-tag">
+                <div class=goal-user-name>
+                  <div>name：</div>
+                  <div class="user-tag-name"><%= goal.user.nickname%></div>
+                </div>
+                <div class="user-tag"><%= goal.user.age.name %></div>
+                <div class="user-tag"><%= goal.user.sex.name %></div>
+                <div class="user-tag"><%= goal.user.profession.name %></div>
+              </div>
+            <% end %>
+
+          </div>
+        <% end %>
+
+      <% end %>
+    </div>
   </div>
 </div>
 

@@ -1,0 +1,78 @@
+<div class="hony-field">
+  <%= image_tag("honey-back.jpg", class:"honey-back") %>
+  <div class="sign-field">
+    <div class="BeeYourBest-icon">
+      <%= link_to image_tag("BeeYourBest_背景透明.png", class:"BeeYourBestBee-icon"), "/" %>
+    </div>
+    <div class="registration">
+      <%= "#{@user.nickname}さんについて"%>
+    </div>
+    
+
+
+    <div class="registration-main">
+      <div class='form-wrap4'>
+
+        <div class="goal-show-user-tag">
+          <div class="goal-user-show-name">
+            <div>name：</div>
+            <div class="user-show-name"><%= @user.nickname%></div>
+          </div>
+          <div class="user-tag"><%= @user.age.name %></div>
+          <div class="user-tag"><%= @user.sex.name %></div>
+          <div class="user-tag"><%= @user.profession.name %></div>
+          <% if @user.effort.present? %>
+            <div class="goal-user-name">
+              <div class="goal-user-show-effort">がんばりたいこと！：</div>
+              <div class="user-tag-name"><%= @user.effort %></div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="goals-show-field">
+          <% @goals.each  do |goal| %>
+            <div class="goal-show-field">
+              <div class="goal-show-grop">
+                <div class='goal-show-text-wrap'>
+                  <label class="goal-show-text">目標：</label>
+                  <div class="goal-show-targetm"><%= goal.targetm %></div>
+                </div>
+              </div>
+              <% if goal.reason.present? %>
+                <div class="goal-show-grop">
+                  <div class='goal-show-text-wrap'>
+                    <label class="goal-show-text">理由：</label>
+                    <div class="goal-show-date"><%= goal.reason %></div>
+                  </div>
+                </div>
+              <% end %>
+              <div class="goal-show-grop">
+                <div class='goal-show-text-wrap'>
+                  <label class="goal-show-text">期日：</label>
+                  <div class="goal-show-date"><%= goal.time.strftime("%Y-%m-%d %H:%M:%S") + "　まで" %></div>
+                </div>
+              </div>
+              <div class="goal-show-grop">
+                <% num = (goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001)) * 100 %>
+                <div class='goal-show-text-wrap'>
+                  <label class="goal-show-text">達成率：</label>
+                  <div class="goal-show-date2"><%= "#{num.ceil(1)}" %></div>
+                  %
+                </div>
+              </div>
+            </div>
+
+
+
+          <% end %>
+        </div>
+
+        <div class="form-bottom5">
+          <%= link_to 'トップページに戻る！', "/", class:"btn btn-border-shadow btn-border-shadow--radius" %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

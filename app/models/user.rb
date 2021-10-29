@@ -3,8 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   has_many :goals
-  # has_many :likes
-  has_many :comments
+  has_many :likes, dependent: :destroy
+  # has_many :like_posts, through: :likes, source: :goal
+
+  # has_many :comments
 
   validates :nickname, presence: true
 

@@ -130,7 +130,7 @@ input[type=checkbox]:checked + .drawer-open span:after {
 }
 /* メニューのデザイン*/
 .drawer-content {
-  width: 20%;
+  width: 18%;
   height: 33.5%;
   position: fixed;
   top: 17%;
@@ -163,6 +163,7 @@ input[type=checkbox]:checked + .drawer-open span:after {
   left: 0;/* 閉じるための要素を画面内へ */
 }
 .drawer-item {
-  text-align: end;
+  text-align: center;
+  padding-left: 10px;
   margin-bottom: 20px;
 }

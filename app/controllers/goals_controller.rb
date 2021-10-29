@@ -7,6 +7,12 @@ class GoalsController < ApplicationController
     end
   end
 
+  def show
+    @goal = Goal.find(params[:id])
+    @user = @goal.user
+    @goals = @user.goals.all
+  end
+
   def new
     @goal = Goal.new
   end

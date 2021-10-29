@@ -40,7 +40,7 @@
 .right-goal {
   width: 100vw;
   height: 72vh;
-  padding-left: 32vw;
+  padding-left: 30vw;
 }
 
 /* グラフなどの調整 */
@@ -79,13 +79,8 @@
   height: 300px;
   border: 10px solid #594F21;
   border-radius: 10px;
-}
-.bou-index2 {
-  position: absolute;
-  width: 93%;
-  background-color: #FDE165;
-  border: 10px solid #594F21;
-  border-radius: 10px;
+  animation: change-color-anim 5s linear infinite;
+  z-index: 1;
 }
 .achievement {
   text-align: center;
@@ -93,13 +88,7 @@
 .achievement > span {
   font-size: 2em;
 }
-.counter2 {
-  font-family: "M PLUS Rounded 1c";
-  font-weight: bold;
-  font-size: 1.2em;
-  text-align: center;
-  padding-top: 20px;
-}
+
 .goal-index-btn {
   text-align: center;
   font-size: 0.8em;
@@ -108,4 +97,65 @@ span > .task-submit {
   background-color: red;
 }
 .new-goal {
+}
+
+
+
+
+.allgoal-field {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 100%;
+}
+.allgoal-card {
+  padding-left: 2px;
+  margin: 10px;
+  width: 300px;
+}
+.allgoal-card > span {
+  font-size: 1.1em;
+  border-bottom: 3px solid #594F21;
+  white-space: normal;
+}
+.allbou-index {
+  width: 100%;
+  height: 280px;
+  border: 10px solid #594F21;
+  border-radius: 10px;
+  animation: change-color-anim 5s linear infinite;
+  z-index: 1;
+}
+@keyframes change-color-anim {
+	50%{
+		filter: hue-rotate(60deg);
+	}
+}
+.goal-user-tag {
+  text-align: center;
+}
+.goal-user-name {
+  display: flex;
+  justify-content: center;
+}
+.user-tag-name {
+  white-space: normal;
+}
+.user-tag {
+  display: inline;
+  border: 1px solid #594F21;
+}
+.a {
+  color: #594F21;
+  text-decoration: none;
+}
+
+
+
+
+
+.test {
+  width: 100px;
 }

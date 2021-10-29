@@ -2,7 +2,7 @@ class TasksController < ApplicationController
 
 def index
   @goal = Goal.find(params[:goal_id])
-  @tasks = @goal.tasks
+  @tasks = @goal.tasks.order('created_at DESC')
   @task = Task.new
   @completion = @goal.completions.order('created_at DESC')
 end

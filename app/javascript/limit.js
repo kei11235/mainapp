@@ -1,6 +1,6 @@
 function limit() {
   const limit = document.getElementById('limit')
-  const counter = document.querySelector('.counter2');
+  const counter = document.querySelector('.counter');
 
     function time_limit() {
       //今の日時
