@@ -1,9 +1,15 @@
-<% if user_signed_in? %>
+<% if user_signed_in? && goal.user.id != current_user.id %>
     <% if goal.liked_by?(current_user) %>
-        <p><span>お気に入り解除: </span><%=link_to goal.likes.count, goal_like_path(goal.id, current_user.id), method: :delete, remote: true %></p>
+        <div class="like-num-count" >いいネ！！： </div>
+        <div class="like-num"><%= goal.likes.count %></div>
+        <%= link_to "♥", goal_like_path(goal.id, current_user.id), method: :delete, class:"like-heart", remote: true %>
     <% else %>
-        <p><span>お気に入り登録: </span><%=link_to goal.likes.count, goal_likes_path(goal.id,), method: :post, remote: true %></p>
+        <div class="like-num-count" >応援する！： </div>
+        <div class="like-num"><%= goal.likes.count %></div>
+        <%= link_to "♡", goal_likes_path(goal.id,), method: :post, class:"like-heart", remote: true %>
     <% end %>
 <% else %>
-    <p><span>お気に入り数: </span><%= goal.likes.count %></p>
+    <div class="like-num-count2" >いいネ！！： </div>
+    <div class="like-num"><%= goal.likes.count %></div>
+    <%= image_tag "125012.png", class:"like-Bee-icon" %>
 <% end %>

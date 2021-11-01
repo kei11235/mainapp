@@ -55,7 +55,6 @@
               <% @completion.each do |t| %>
                 <div class="task-content">
                   <%= t.content %>
-
                   <div class="task-delete">
                     <%= link_to "削除", edit_goal_completion_path(params[:goal_id], t.id), method: :get, class: "task-submit" %>
                   </div>

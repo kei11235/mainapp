@@ -4,6 +4,7 @@
   background-color: #FCF8E6;
   opacity: 0.85;
   box-shadow: 6px 6px 4px #594F21;
+  margin-bottom: 30px;
 }
 .form-top4 {
   height: 70%;
@@ -11,9 +12,9 @@
 .counter {
   font-family: "M PLUS Rounded 1c";
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 2.0em;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 15px;
 }
 .form-bottom4 {
   height: 30%;

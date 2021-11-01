@@ -5,7 +5,7 @@
       <%= link_to image_tag("BeeYourBest_背景透明.png", class:"BeeYourBestBee-icon"), "/" %>
     </div>
     <div class="registration">
-      <%= "#{@user.nickname}さんについて"%>
+      <%= "#{@user.nickname}　さんの情報"%>
     </div>
     
 
@@ -35,7 +35,7 @@
               <div class="goal-show-grop">
                 <div class='goal-show-text-wrap'>
                   <label class="goal-show-text">目標：</label>
-                  <div class="goal-show-targetm"><%= goal.targetm %></div>
+                  <div class="goal-show-target"><%= goal.target %></div>
                 </div>
               </div>
               <% if goal.reason.present? %>
@@ -60,9 +60,10 @@
                   %
                 </div>
               </div>
+              <div id="likes_buttons_<%= goal.id %>" class="likes-button">
+                <%= render partial: 'likes/like', locals: { goal: goal} %>
+              </div>
             </div>
-
-
 
           <% end %>
         </div>

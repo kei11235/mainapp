@@ -175,3 +175,29 @@ div.btn-border-shadow:hover:before {
   margin-top: 0.5em;
   font-size: 2rem;
 }
+.form-bottom6 > .btn {
+  font-size: 1.5rem;
+}
+.form-submit6 {
+  position: absolute;
+  left: 1.6em;
+  border: none;
+  background-color: #FDCE00;
+  color: #3E3200;
+  cursor: pointer; 
+}
+.form-bottom6 > .btn-border-shadow:before {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 100%;
+  height: 100%;
+  content: "";
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: 5px solid #3E3200;
+  border-radius: 0.5rem;
+}
+.form-bottom6 > div.btn-border-shadow--radius:before {
+  border-radius: 100vh;
+}

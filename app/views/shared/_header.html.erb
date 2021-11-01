@@ -1,23 +1,82 @@
 <header class='top-page-header'>
   <div class='header-contents'>
-    <div class="header-logo-form">
+    <div class="BeeYourBest-form">
       <div class="BeeYourBest-icon">
         <%= link_to image_tag("BeeYourBest_背景透明.png", class:"BeeYourBestBee-icon"), "/" %>
       </div>
-      <div class="header-form">
-        <%# <form method="get" action="#" class="search_container">
-          <input type="text" size="25" placeholder="　キーワード検索">
-          <input type="submit" value="&#xf002">
-        </form> %>
+
+      <div class="form-sort">
+
+        <div class="drawer2">
+          <input type="checkbox" id="drawer-check2" class="drawer-hidden2" >
+          <label for="drawer-check2" class="drawer-open2"><span>　検索 ▼</span></label>
+          <label for="drawer-check2" class="drawer-close2"></label>
+          <nav class="drawer-content2">
+            <ul class="drawer-list">
+            <%= search_form_for @q do |f| %>
+                <%= f.label :user_age_id, "年齢：" %>
+                <%= f.collection_check_boxes(:user_age_id_in, Age.where.not(id: 1), :id, :name ) do |tag| %>
+                  <%= tag.check_box class:"header-form-check" %>
+                  <%= tag.text %>
+                <% end %>
+                <br>
+                <%= f.label :user_sex_id, "性別：" %>
+                <%= f.collection_check_boxes(:user_sex_id_in, Sex.where.not(id: 1), :id, :name ) do |tag| %>
+                  <%= tag.check_box class:"header-form-check" %>
+                  <%= tag.text %>
+                <% end %>
+                <br>
+                <%= f.label :user_profession_id, "職業：" %>
+                <%= f.collection_check_boxes(:user_profession_id_in, Profession.where.not(id: 1), :id, :name ) do |tag| %>
+                  <%= tag.check_box class:"header-form-check" %>
+                  <%= tag.text %>
+                <% end %>
+                <br>
+                <%= f.label :user_nickname, "ニックネーム：" %>
+                <%= f.search_field :user_nickname_cont, class:"header-form-name" %>
+                <br>
+                <%= f.label :target, "目標名　　　：" %>
+                <%= f.search_field :target_cont, class:"header-form-name2" %>
+                <br>
+                <%= f.label :time, "期日　　　　：" %>
+                <%= f.datetime_field :time_gteq, class:"form-length", min: Date.current %>以上〜
+                <%= f.datetime_field :time_lt, class:"form-length1" %>未満
+                <br>
+                <%= f.label :achievement, "達成率　　　：" %>
+                <%= f.number_field :achievement_gteq, class:"form-num-length" %>％以上〜
+                <%= f.number_field :achievement_lt, class:"form-num-length1" %>％未満
+                <br>
+                <%= f.label :like, "イイね数　　：" %>
+                <%= f.number_field :like_gteq, class:"form-num-length-1" %>　以上〜
+                <%= f.number_field :like_lt, class:"form-num-length1" %>　未満
+                <br>
+                <div class="form-bottom6">
+                  <div class="btn btn-border-shadow btn-border-shadow--radius">
+                    　
+                    <%= f.submit "検索", class:"form-submit6" %>
+                  </div>
+                </div>
+            <% end %>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="sort-field">
+          <tr>
+            <th><%= sort_link(@q, :time, "目標期日") %></th>
+            <th><%= sort_link(@q, :achievement, "達成率", default_order: :desc) %></th>
+            <th><%= sort_link(@q, :like, "いいね数", default_order: :desc) %></th>
+          </tr>
+        </div>
+
       </div>
+
     </div>
     <% if user_signed_in? %>
-
       <div class="drawer">
         <input type="checkbox" id="drawer-check" class="drawer-hidden" >
         <label for="drawer-check" class="drawer-open"><span></span></label>
         <label for="drawer-check" class="drawer-close"></label>
-
         <nav class="drawer-content">
           <ul class="drawer-list">
             <li class="drawer-item">
@@ -35,9 +94,10 @@
           </ul>
         </nav>
       </div>
-
-    <% else %>%
-      <%= link_to 'ログイン', new_user_session_path, class:"btn btn-border-shadow btn-border-shadow--radius" %>
+    <% else %>
+      <div class="login">
+        <%= link_to 'ログイン', new_user_session_path, class:"btn btn-border-shadow btn-border-shadow--radius" %>
+      </div>
     <% end %>
   </div>
 </header>

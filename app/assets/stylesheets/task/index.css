@@ -12,6 +12,7 @@
   background-color: #FCF8E6;
   opacity: 0.85;
   box-shadow: 6px 6px 4px #594F21;
+  margin-bottom: 30px;
 }
 .task-form {
   width: 60%;
@@ -52,7 +53,7 @@
   text-decoration: none;
 }
 .task-submit:hover{
-  background-color: #E7BB5E;
+  opacity: 0.5;
 }
 .task-field {
   color: #FCF8E6;
@@ -89,6 +90,7 @@
   border: none;
   background-color: #FDCE00;
   color: #3E3200;
+  cursor: pointer; 
 }
 .form-right5 {
   width: 20%;

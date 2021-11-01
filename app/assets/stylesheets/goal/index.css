@@ -6,12 +6,14 @@
   position: absolute;
   width: 30vw;
   height: 85vh;
+  z-index: 50;
 }
 
 .left-absolute {
   position: absolute;
   width: 30vw;
   height: 85vh;
+  z-index: 51;
 }
 .left-size {
   width: 80%;
@@ -32,15 +34,20 @@
   border-radius: 20px;
   margin: 15% 5%;
   white-space: nowrap;
+  animation: left-box .6s ease infinite alternate;
   }
 .left-box :nth-child(2) {
   text-align: end;
+}
+@keyframes left-box {
+  0% {transform: translateY(0px);}
+  100% {transform: translateY(-10px);}
 }
 
 .right-goal {
   width: 100vw;
   height: 72vh;
-  padding-left: 30vw;
+  padding-left: 25vw;
 }
 
 /* グラフなどの調整 */
@@ -63,12 +70,24 @@
 .limit > span {
   font-size: 1.1em;
 }
+.counter2 {
+  font-family: "M PLUS Rounded 1c";
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+  padding-top: 1px;
+}
 .bou-index-field {
   width: 100%;
   margin-top: 10px;
   display: flex;
   justify-content: center;
+  transition: all 0.5s;
 }
+.bou-index-field:hover {
+  transform: scale(1.05, 1.05);
+}
+
 .bou-goal-field2 {
   width: 60%;
   position: relative;
@@ -76,10 +95,10 @@
 }
 .bou-index {
   width: 100%;
-  height: 300px;
+  height: 270px;
   border: 10px solid #594F21;
   border-radius: 10px;
-  animation: change-color-anim 5s linear infinite;
+  animation: change-color-anim 2.6s linear infinite;
   z-index: 1;
 }
 .achievement {
@@ -96,13 +115,9 @@
 span > .task-submit {
   background-color: red;
 }
-.new-goal {
-}
-
-
-
 
 .allgoal-field {
+  padding-left: 5vw;
   display: flex;
   align-items: flex-end;
   margin-bottom: 10px;
@@ -125,13 +140,11 @@ span > .task-submit {
   height: 280px;
   border: 10px solid #594F21;
   border-radius: 10px;
-  animation: change-color-anim 5s linear infinite;
+  animation: change-color-anim 2.6s linear infinite;
   z-index: 1;
 }
 @keyframes change-color-anim {
-	50%{
-		filter: hue-rotate(60deg);
-	}
+  50%{filter: hue-rotate(40deg);}
 }
 .goal-user-tag {
   text-align: center;
@@ -147,15 +160,7 @@ span > .task-submit {
   display: inline;
   border: 1px solid #594F21;
 }
-.a {
+.goal-index-path {
   color: #594F21;
   text-decoration: none;
-}
-
-
-
-
-
-.test {
-  width: 100px;
 }

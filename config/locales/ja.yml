@@ -6,3 +6,6 @@ ja:
         age_id: 年齢
         sex_id: 性別
         profession_id: お仕事
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"

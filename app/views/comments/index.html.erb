@@ -1,0 +1,109 @@
+<div class="hony-field">
+  <%= image_tag("honey-back.jpg", class:"honey-back") %>
+  <div class="sign-field">
+    <div class="BeeYourBest-icon">
+      <%= link_to image_tag("BeeYourBest_背景透明.png", class:"BeeYourBestBee-icon"), "/" %>
+    </div>
+    <div class="registration">
+        <% if current_user.id == @user.id %>
+      みんなからのメッセージ
+      <% else %>
+        <%= "#{@user.nickname}　さんへ"%>
+      <% end %>
+    </div>
+    
+
+    <div class="registration-main">
+      <div class='form-wrap4'>
+        <% if current_user.id != @user.id %>
+          <div class="goal-show-user-tag">
+            <div class="goal-user-show-name">
+              <div>name：</div>
+              <div class="user-show-name"><%= @user.nickname%></div>
+            </div>
+            <div class="user-tag"><%= @user.age.name %></div>
+            <div class="user-tag"><%= @user.sex.name %></div>
+            <div class="user-tag"><%= @user.profession.name %></div>
+            <% if @user.effort.present? %>
+              <div class="goal-user-name">
+                <div class="goal-user-show-effort">がんばりたいこと！：</div>
+                <div class="user-tag-name"><%= @user.effort %></div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
+        <div class="goals-show-field">
+          <% goal = @goal %>
+          <div class="goal-show-field">
+            <div class="goal-show-grop">
+              <div class='goal-show-text-wrap'>
+                <label class="goal-show-text">目標：</label>
+                <div class="goal-show-target"><%= goal.target %></div>
+              </div>
+            </div>
+            <% if goal.reason.present? %>
+              <div class="goal-show-grop">
+                <div class='goal-show-text-wrap'>
+                  <label class="goal-show-text">理由：</label>
+                  <div class="goal-show-date"><%= goal.reason %></div>
+                </div>
+              </div>
+            <% end %>
+            <div class="goal-show-grop">
+              <div class='goal-show-text-wrap'>
+                <label class="goal-show-text">期日：</label>
+                <div class="goal-show-date"><%= goal.time.strftime("%Y-%m-%d %H:%M:%S") + "　まで" %></div>
+              </div>
+            </div>
+            <div class="goal-show-grop">
+              <% num = (goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001)) * 100 %>
+              <div class='goal-show-text-wrap'>
+                <label class="goal-show-text">達成率：</label>
+                <div class="goal-show-date2"><%= "#{num.ceil(1)}" %></div>
+                %
+              </div>
+            </div>
+            <div id="likes_buttons_<%= goal.id %>" class="likes-button">
+              <%= render partial: 'likes/like', locals: { goal: goal} %>
+            </div>
+          </div>
+        </div>
+
+        <div class="comment-field"> 
+          <% @comments.each do |c| %>
+            <% if current_user.id == c.user.id%>
+              <div class="sample_box12">
+                <div class="sample_box12_tape"></div>
+                <p class="sample_box12_title"><%= c.text %></p>
+                <p class="sample_box12_subtitle"><%= l c.created_at %></p>
+                <p class="sample_box12_subtitle">
+                <%= link_to "#{c.user.nickname} さん", goal_path(c.user.goals.first.id), class:"comment-none" %>
+                </p>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="comment-form-field">
+
+          <%= form_with model: [@goal, @comment], class: 'form', local: true do |f| %>
+            <div class="form-input">
+              <%= f.text_field :text, class: 'form-message', placeholder: 'type a message' %>
+            </div>
+            <div>
+              <%= f.submit '送信', class: 'form-subm' %>
+            </div>
+          <% end %>
+
+        </div>
+
+        <div class="form-bottom5">
+          <%= link_to 'トップページに戻る！', "/", class:"btn btn-border-shadow btn-border-shadow--radius" %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

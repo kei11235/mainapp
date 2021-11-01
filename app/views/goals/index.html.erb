@@ -13,7 +13,7 @@
               <div class="goal-card">
                 目標：
                 <span>
-                  <%= goal.targetm %>
+                  <%= goal.target %>
                 </span>
                 <div id="limit" class="limit">
                   目標期日：
@@ -21,12 +21,21 @@
                     <%=  goal.time.strftime("%Y-%m-%d %H:%M:%S") %>
                   </span>
                 </div>
-                <p class="counter", id ="counter"></p>
+                <p class="counter2", id ="counter"></p>
+                <div class="likes-content-field">
+                  <div class="likes-content"></div>
+                  <div id="likes_buttons_<%= goal.id %>" class="likes-button">
+                    <%= render partial: 'likes/like', locals: { goal: goal} %>
+                  </div>
+                  <div class="comment-box">
+                    <%= link_to "メッセージ", goal_comments_path(goal.id), class: "task-submit" %>
+                  </div>
+                </div>
                 <div class="bou-index-field">
                   <div class="bou-goal-field2">
                     <div class="<%= "bou-index#{goal.id}" %>">
                       <% num = (goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001)) * 100 %>
-                      <% numpx = "#{(300 * (1 - goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001))).floor(1)}px" %>
+                      <% numpx = "#{(270 * (1 - goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001))).floor(1)}px" %>
 
                       <style>
                         <%= ".bou-index#{goal.id}" %> {
@@ -58,15 +67,10 @@
                     <span><%= link_to "目標の削除", goal_path(goal.id), method: :delete, class: "task-submit" %></span>
                   </div>
                 </div>
-
-
               </div>
-
             <% end %>
           </div>
             <%= link_to '新しく目標を作る！　　', new_goal_path, class:"btn btn-flat" %>
-
-
 
           <% else %>
             <div class="left-box">
@@ -91,47 +95,39 @@
 
 
 
-
-
-
-
   <div class="right-goal">
     <div class="allgoal-field">
-      <% @goals.each do |goal| %>
+      <% @results.each do |goal| %>
         <% num = (goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001)) * 100 %>
         <% numpx = "#{(280 * (1 - goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001))).floor(1)}px" %>
 
-        <% if num.ceil(1) < 100 %>
+<%# トップページには5日前までのデータしか残さない %>
+        <% if goal.time > Date.current.ago(5.day) %>
           <div class="allgoal-card">
             目標：
             <span>
-              <%= goal.targetm %>
+              <%= goal.target %>
             </span>
-
-
-          <div id="likes_buttons_<%= goal.id %>">
-             <%= render partial: 'likes/like', locals: { goal: goal} %>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
 
             <div id="limit" class="limit">
               目標期日：
               <span>
                 <%= goal.time.strftime("%Y-%m-%d %H:%M:%S") %>
               </span>
+
+              <div class="likes-content-field">
+                <div id="likes_buttons_<%= goal.id %>" class="likes-button">
+                  <%= render partial: 'likes/like', locals: { goal: goal} %>
+                </div>
+                <div class="comment-box">
+                  <%= link_to "メッセージ", goal_comments_path(goal.id), class: "task-submit" %>
+                </div>
+              </div>
+
+
             </div>
 
-            <%= link_to goal_path(goal.id), class:"a" do %>
+            <%= link_to goal_path(goal.id), class:"goal-index-path" do %>
               <div class="bou-index-field">
                 <div class="bou-goal-field2">
                   <div class="<%= "allbou-index#{goal.id}" %>">
@@ -159,6 +155,7 @@
                   </div>
                 </div>
               </div>
+            <% end %>
 
               <div class="goal-user-tag">
                 <div class=goal-user-name>
@@ -169,7 +166,6 @@
                 <div class="user-tag"><%= goal.user.sex.name %></div>
                 <div class="user-tag"><%= goal.user.profession.name %></div>
               </div>
-            <% end %>
 
           </div>
         <% end %>

@@ -1,0 +1,35 @@
+.likes-content-field {
+  display: flex;
+  align-items: center;
+}
+
+.likes-content {
+  width: 30px;
+}
+
+.likes-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.like-num {
+  font-size: 1.5em;
+}
+.like-heart {
+  margin-left: 15px;
+  text-decoration: none;
+  color: red;
+  font-size: 1.5em;
+  display: block;
+  transition: all 0.4s;
+}
+.like-heart:hover {
+  transform: scale(1.3, 1.3);
+}
+.like-Bee-icon {
+  width: 30px;
+  margin-left: 15px;
+}
+.like-num-count2 {
+  font-size: 1em;
+}

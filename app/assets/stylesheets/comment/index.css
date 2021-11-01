@@ -1,0 +1,41 @@
+.comment-field {
+  margin: 20px 30px;
+  padding: 10px;
+  border: 1px solid #594F21;
+}
+
+.sample_box12 {
+  width: 320px;/* 紙の横幅 100%にすると全幅表示に */
+  padding: 15px;
+  margin: 2em;
+  background: #fbc7f5;/* 紙の色 */
+  color: #000;/* 文字色 */
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.03);transform:rotate(2deg);
+  word-break: break-all;
+}
+.sample_box12 p {
+  margin: 0; 
+  padding: 0;
+  font-size: 0.9em;
+}
+.sample_box12_tape {
+  width: 50%;
+  height: 35px;
+  margin: -25px auto 0;
+  background: rgba(251, 234, 144, 0.5);/* テープの色 */
+  transform: rotate(-3deg);
+  opacity: 0.9;
+}
+.sample_box12_title {
+  text-align: center;
+  font-size: 1.2em!important;
+  margin: 10px 0!important;
+}
+.sample_box12_subtitle {
+  text-align: center;
+  font-size: 0.6em!important;
+}
+.comment-none {
+  text-decoration: none;
+  color: #000;
+}

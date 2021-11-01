@@ -2,8 +2,7 @@ class Goal < ApplicationRecord
 
   belongs_to :user
   has_many :likes, dependent: :destroy
-  # has_many :users, through: :likes
-  # has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :completions, dependent: :destroy
 
@@ -11,6 +10,6 @@ class Goal < ApplicationRecord
     likes.where(user_id: user.id).exists?
   end
 
-  validates :targetm, presence: true
+  validates :target, presence: true
   validates :time, presence: true
 end

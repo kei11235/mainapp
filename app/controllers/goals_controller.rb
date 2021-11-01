@@ -1,7 +1,9 @@
 class GoalsController < ApplicationController
 
   def index
-    @goals = Goal.all
+    # @goals = Goal.all
+    @q = Goal.ransack(params[:q])
+    @results = @q.result(distinct: true).order('achievement DESC')
     if user_signed_in?
       @goal = current_user.goals.order('created_at DESC')
     end
@@ -48,7 +50,7 @@ class GoalsController < ApplicationController
   private
   
   def goal_params
-    params.require(:goal).permit(:targetm, :reason, :time).merge(user_id: current_user.id)
+    params.require(:goal).permit(:target, :reason, :time).merge(user_id: current_user.id, achievement: 0, like: 0)
   end
 
 end

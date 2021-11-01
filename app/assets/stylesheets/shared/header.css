@@ -17,64 +17,164 @@
   align-items: center;
 }
 
-.header-logo-form {
-  width: 50%;
+.BeeYourBest-form {
   display: flex;
   justify-content: space-between;
-  /* align-items: flex-end; */
+  align-items: flex-end;
+  width: 900px;
 }
 
 .BeeYourBest-icon {
   display: block;
-  width: 40%;
+  width: 250px;
   min-width :180px;
 }
 .BeeYourBestBee-icon{
   width: 100%;
 }
+.form-sort {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 570px;
+  margin-bottom: 15px;
+}
 
-/* 検索form */
-/* .header-form{
-  width: 50%;
+.header-form-field {
+  margin: 10px;
+  border: 3px solid #594F21;
 }
-.search_container{
+.header-form-name {
+  width: 400px;
+  margin-left: calc(5px + 0.8px);
+}
+.header-form-name2 {
+  width: 400px;
+  margin-left: 5px;
+}
+.form-length {
+  width: 230px;
+  margin-left: 5px;
+}
+.form-length1 {
+  width: 230px;
+}
+.form-num-length {
+  width: 60px;
+  margin-left: 5px;
+}
+.form-num-length1 {
+  width: 60px;
+}
+.form-num-length-1 {
+  margin-left: calc(5px + 1.44px);
+  width: 60px;
+}
+
+
+/* チェックボックスの非表示 */
+.drawer-hidden2 {
+  display: none;
+}
+/* ハンバーガーアイコンの設置スペース */
+.drawer-open2 {
+  display: flex;
+  height: 2.68em;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  box-sizing: border-box;
-  display: block;
-  padding: 3px 1px;
-  margin-bottom: 1vh;
-  border-radius: 20px;
-  height: 2.2em;
-  min-width :173px;
-  overflow: hidden;
-  background: #FCF8E6;
-}
-.search_container input[type="text"]{
-  border: none;
-  height: 2.0em;
-  background: #FCF8E6;
-}
-.search_container input[type="text"]:focus {
-  outline: 0;
-}
-.search_container input[type="submit"]{
+  z-index: 98;
   cursor: pointer;
-  font-family: FontAwesome;
-  font-size: 1.3em;
-  border: none;
-  background: none;
-  color: #594F21;
-  position: absolute;
-  height: 2.5em;
-  right: 20px;
-  top: -8px;
-  padding-left: 2px;
-  outline : none;
 }
-.search_container ::-webkit-input-placeholder {
+.drawer-open2 span {
+  /* margin-top: 20px; */
+  text-align: center;
+  font-size: 1.8em;
+  display: block;
+  width: 160px;
+  border-radius: 30px;
+  background: #FCF8E6;
+  transition: 0.5s;
+  position: absolute;
+}
+.drawer-open2:hover span{
+  background: #FDCE00;
+}
+input[type=checkbox]:checked + .drawer-open2 span {
+  background: #B19000;
+  }
+
+/* メニューのデザイン*/
+.drawer-content2 {
+  width: 57%;
+  height: 45%;
+  position: fixed;
+  top: -120%;
+  left: 23%;/* メニューを画面外へ */
+  z-index: 100;
+  background: #594F21;
+  transition: 0.7s;
+  padding: 1%;
+  box-shadow: 0px 0px 0px 10px #594F21;
+  color: #FCF8E6;
+  border: 2px dashed #FDCE00;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+#drawer-check2:checked ~ .drawer-content2 {
+  top: 17%;
+  left: 23%;/* メニューを画面内へ */
+}
+/* メニューを閉じるための要素のデザイン*/
+.drawer-close2 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;/* 閉じるための要素を画面外へ */
+  z-index: 99;
+  transition: .5s;
+}
+#drawer-check2:checked ~ .drawer-close2 {
+  left: 0;/* 閉じるための要素を画面内へ */
+}
+.header-form-check {
+  margin-left: 5px;
+}
+.form-bottom6 {
+  height: 30%;
+  margin: 4vh 2vw 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sort-field {
+  display: flex;
+  align-items: flex-end;
+}
+.sort_link {
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.3em;
+  display: block;
+  height: 30px;
+  width: 140px;
+  border-radius: 30px;
   color: #594F21;
-} */
-/* 検索form */
+  background: #FCF8E6;
+  transition: 0.5s;
+  margin-right: 10px;
+}
+.sort_link:hover {
+  background: #FDCE00;
+}
+
+
+
+
 
 
 
@@ -103,7 +203,7 @@
   height: 15px;
   width: 60px;
   border-radius: 3px;
-  background: #FDCE00;
+  background: #FCF8E6;
   transition: 0.5s;
   position: absolute;
 }
@@ -116,6 +216,11 @@ input[type=checkbox]:checked + .drawer-open span:before {
 input[type=checkbox]:checked + .drawer-open span:after {
   background: #B19000;
   }
+.drawer-open:hover span,
+.drawer-open:hover span:before,
+.drawer-open:hover span:after {
+  background: #FDCE00;
+}
 /* 一番上の棒 */
 .drawer-open span:before {
   bottom: 18px;
@@ -166,4 +271,7 @@ input[type=checkbox]:checked + .drawer-open span:after {
   text-align: center;
   padding-left: 10px;
   margin-bottom: 20px;
+}
+.login {
+  margin-top: 15px;
 }
