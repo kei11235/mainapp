@@ -1,0 +1,64 @@
+<div class="holder<%= goal.id %>">
+  <% i = rand(100000) %>
+  <div class="bubble<%= i %>"></div>
+  <div class="bubble<%= i %>"></div>
+  <div class="bubble<%= i %>"></div>
+  <div class="bubble<%= i %>"></div>
+  <div class="bubble<%= i %>"></div>
+  <style>
+    <%= ".holder#{goal.id}" %> {
+      width: 100%;
+      height: <%= goal.achievement - 3 %>%;
+      position: relative;
+      z-index: -1;
+      animation: mochimochi 3s infinite;
+      overflow: hidden;
+    }
+    <%= ".bubble#{i}" %> {
+      position: absolute;
+      bottom: -40;
+      background-color: #FCF8E6;
+      border-radius: 50%;
+      animation: bubble 3s ease-in infinite;
+      z-index: 40;
+    }
+    <%= ".bubble#{i}:nth-child(1)" %> {
+      <% a1 = rand(10.0..30.0)%>
+      width: <%= a1 %>px;
+      height: <%= a1 %>px;
+      left: <%= rand(0.0..90.0) %>%;
+      animation-duration: <%= rand(4.0..9.0) %>s;
+    }
+    <%= ".bubble#{i}:nth-child(2)" %> {
+      <% a2 = rand(20.0..40.0)%>
+      width: <%= a2 %>px;
+      height: <%= a2 %>px;
+      left: <%= rand(0.0..90.0) %>%;
+      animation-duration: <%= rand(4.0..9.0) %>s;
+    }
+    <%= ".bubble#{i}:nth-child(3)" %> {
+      <% a3 = rand(10.0..30.0)%>
+      width: <%= a3 %>px;
+      height: <%= a3 %>px;
+      left: <%= rand(0.0..90.0) %>%;
+      animation-duration: <%= rand(4.0..9.0) %>s;
+    }
+    <%= ".bubble#{i}:nth-child(4)" %> {
+      <% a4 = rand(10.0..30.0)%>
+      width: <%= a4 %>px;
+      height: <%= a4 %>px;
+      left: <%= rand(0.0..90.0) %>%;
+      animation-duration: <%= rand(4.0..9.0) %>s;
+    }
+    <%= ".bubble#{i}:nth-child(5)" %> {
+      <% a5 = rand(10.0..30.0)%>
+      width: <%= a5 %>px;
+      height: <%= a5 %>px;
+      left: <%= rand(0.0..90.0) %>%;
+      animation-duration: <%= rand(4.0..9.0) %>s;
+    }
+  </style>
+  <div class="first"></div>
+  <div class="second"></div>
+  <div class="third"></div>
+</div>

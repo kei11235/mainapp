@@ -2,23 +2,31 @@
   margin: 20px 30px;
   padding: 10px;
   border: 1px solid #594F21;
+  overflow: scroll;
+  scroll-snap-align: end;
+  max-height: 500px;
+}
+.c-box {
+  display: flex;
+  justify-content: space-around;
 }
 
-.sample_box12 {
-  width: 320px;/* 紙の横幅 100%にすると全幅表示に */
+.comment-field-box {
+  width: 350px;/* 紙の横幅 100%にすると全幅表示に */
   padding: 15px;
   margin: 2em;
   background: #fbc7f5;/* 紙の色 */
   color: #000;/* 文字色 */
-  box-shadow: 4px 4px 4px rgba(0,0,0,0.03);transform:rotate(2deg);
+  transform: rotate(2deg);
   word-break: break-all;
+  margin-left: 380px;
 }
-.sample_box12 p {
+.comment-box p {
   margin: 0; 
   padding: 0;
   font-size: 0.9em;
 }
-.sample_box12_tape {
+.comment-box-tape {
   width: 50%;
   height: 35px;
   margin: -25px auto 0;
@@ -26,16 +34,29 @@
   transform: rotate(-3deg);
   opacity: 0.9;
 }
-.sample_box12_title {
+.comment-box-title {
   text-align: center;
   font-size: 1.2em!important;
   margin: 10px 0!important;
 }
-.sample_box12_subtitle {
+.comment-box-sub {
   text-align: center;
   font-size: 0.6em!important;
 }
 .comment-none {
   text-decoration: none;
   color: #000;
+}
+
+
+
+
+.comment-field-box2 {
+  width: 350px;/* 紙の横幅 100%にすると全幅表示に */
+  padding: 15px;
+  margin: 2em;
+  background: #fbc7f5;/* 紙の色 */
+  color: #000;/* 文字色 */
+  transform: rotate(2deg);
+  word-break: break-all;
 }

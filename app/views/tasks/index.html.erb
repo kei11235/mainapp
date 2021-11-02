@@ -66,20 +66,25 @@
           </div>
 
           <div class="form-right5">
-            <div class="bou2">
-              <% num = (@completion.count / (@tasks.count + @completion.count + 0.0001)) * 100 %>
-              <% numpx = "#{400 * (1 - @completion.count / (@tasks.count + @completion.count + 0.0001))}px" %>
-              <style>
-                .bou2 {
-                  height: <%= numpx %>;
-                }
-              </style>
+            <div class="bou-index" >
+              <div class="holder<%= @goal.id %>">
+                <style>
+                  <%= ".holder#{@goal.id}" %> {
+                    width: 100%;
+                    height: <%= @goal.achievement %>%;
+                    position: relative;
+                    z-index: 1;
+                  }
+                </style>
+                <div class="first"></div>
+                <div class="second"></div>
+                <div class="third"></div>
+              </div>
             </div>
-            <%= image_tag "rainbow.jpg", class:"bou" %>
             <div class="achievement">
               達成率
               <span>
-                <%= num.ceil(1) %>
+                <%= @goal.achievement %>
               </span>
               %
             </div>

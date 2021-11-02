@@ -46,7 +46,7 @@
 
 .right-goal {
   width: 100vw;
-  height: 72vh;
+  height: 74vh;
   padding-left: 25vw;
 }
 
@@ -95,11 +95,9 @@
 }
 .bou-index {
   width: 100%;
-  height: 270px;
+  height: 350px;
   border: 10px solid #594F21;
   border-radius: 10px;
-  animation: change-color-anim 2.6s linear infinite;
-  z-index: 1;
 }
 .achievement {
   text-align: center;
@@ -140,14 +138,12 @@ span > .task-submit {
   height: 280px;
   border: 10px solid #594F21;
   border-radius: 10px;
-  animation: change-color-anim 2.6s linear infinite;
-  z-index: 1;
-}
-@keyframes change-color-anim {
-  50%{filter: hue-rotate(40deg);}
+  display: flex;
+  align-items: flex-end;
 }
 .goal-user-tag {
   text-align: center;
+  height: 4.5em;
 }
 .goal-user-name {
   display: flex;

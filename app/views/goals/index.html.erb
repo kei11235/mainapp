@@ -33,28 +33,15 @@
                 </div>
                 <div class="bou-index-field">
                   <div class="bou-goal-field2">
-                    <div class="<%= "bou-index#{goal.id}" %>">
-                      <% num = (goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001)) * 100 %>
-                      <% numpx = "#{(270 * (1 - goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001))).floor(1)}px" %>
-
-                      <style>
-                        <%= ".bou-index#{goal.id}" %> {
-                          height: <%= numpx %>;
-                          position: absolute;
-                          width: 93%;
-                          background-color: #FDE165;
-                          border: 10px solid #594F21;
-                          border-radius: 10px;
-                          z-index: 10;
-                        }
-                      </style>
+                    
+                    <div class="allbou-index" >
+                      <%= render partial: "shared/bou", locals: { goal: goal } %>
                     </div>
 
-                    <%= image_tag "rainbow.jpg", class:"bou-index" %>
                     <div class="achievement">
                       達成率
                       <span>
-                        <%= num.ceil(1) %>
+                        <%= goal.achievement %>
                       </span>
                       %
                     </div>
@@ -98,11 +85,9 @@
   <div class="right-goal">
     <div class="allgoal-field">
       <% @results.each do |goal| %>
-        <% num = (goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001)) * 100 %>
-        <% numpx = "#{(280 * (1 - goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001))).floor(1)}px" %>
 
 <%# トップページには5日前までのデータしか残さない %>
-        <% if goal.time > Date.current.ago(5.day) %>
+        <% if goal.time > DateTime.now.ago(5.day) %>
           <div class="allgoal-card">
             目標：
             <span>
@@ -124,32 +109,19 @@
                 </div>
               </div>
 
-
             </div>
 
             <%= link_to goal_path(goal.id), class:"goal-index-path" do %>
               <div class="bou-index-field">
                 <div class="bou-goal-field2">
-                  <div class="<%= "allbou-index#{goal.id}" %>">
 
-                    <style>
-                      <%= ".allbou-index#{goal.id}" %> {
-                        height: <%= numpx %>;
-                        position: absolute;
-                        width: 93%;
-                        background-color: #FCF8E6;
-                        border: 10px solid #594F21;
-                        border-radius: 10px;
-                        z-index: 10;
-                      }
-                    </style>
+                  <div class="allbou-index" >
+                    <%= render partial: "shared/bou", locals: { goal: goal } %>
                   </div>
-
-                  <%= image_tag "rainbow.jpg", class:"allbou-index" %>
                   <div class="achievement">
                     達成率
                     <span>
-                      <%= num.ceil(1) %>
+                      <%= goal.achievement %>
                     </span>
                     %
                   </div>

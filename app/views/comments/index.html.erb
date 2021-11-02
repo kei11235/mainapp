@@ -70,20 +70,28 @@
           </div>
         </div>
 
-        <div class="comment-field"> 
+        <div class="comment-field" id="scroll"> 
+
           <% @comments.each do |c| %>
             <% if current_user.id == c.user.id%>
-              <div class="sample_box12">
-                <div class="sample_box12_tape"></div>
-                <p class="sample_box12_title"><%= c.text %></p>
-                <p class="sample_box12_subtitle"><%= l c.created_at %></p>
-                <p class="sample_box12_subtitle">
+              <div class="comment-field-box">
+            <% else %>
+              <div class="comment-field-box2">
+            <% end %>
+                <div class="comment-box-tape"></div>
+                <p class="comment-box-title"><%= c.text %></p>
+                <p class="comment-box-sub"><%= l c.created_at %></p>
+                <p class="comment-box-sub">
                 <%= link_to "#{c.user.nickname} さん", goal_path(c.user.goals.first.id), class:"comment-none" %>
                 </p>
               </div>
-            <% end %>
           <% end %>
         </div>
+        <div class="c-box">
+          <div class="c-box-left">みんな</div>
+          <div class="c-box-right">自分</div>
+        </div>
+
 
         <div class="comment-form-field">
 
