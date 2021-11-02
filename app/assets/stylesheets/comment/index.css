@@ -10,29 +10,10 @@
   display: flex;
   justify-content: space-around;
 }
-
-.comment-field-box {
-  width: 350px;/* 紙の横幅 100%にすると全幅表示に */
-  padding: 15px;
-  margin: 2em;
-  background: #fbc7f5;/* 紙の色 */
-  color: #000;/* 文字色 */
-  transform: rotate(2deg);
-  word-break: break-all;
-  margin-left: 380px;
-}
 .comment-box p {
   margin: 0; 
   padding: 0;
   font-size: 0.9em;
-}
-.comment-box-tape {
-  width: 50%;
-  height: 35px;
-  margin: -25px auto 0;
-  background: rgba(251, 234, 144, 0.5);/* テープの色 */
-  transform: rotate(-3deg);
-  opacity: 0.9;
 }
 .comment-box-title {
   text-align: center;
@@ -46,17 +27,4 @@
 .comment-none {
   text-decoration: none;
   color: #000;
-}
-
-
-
-
-.comment-field-box2 {
-  width: 350px;/* 紙の横幅 100%にすると全幅表示に */
-  padding: 15px;
-  margin: 2em;
-  background: #fbc7f5;/* 紙の色 */
-  color: #000;/* 文字色 */
-  transform: rotate(2deg);
-  word-break: break-all;
 }

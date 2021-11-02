@@ -1,0 +1,8 @@
+<%= form_with model: [goal, comment], url: goal_comments_path(goal.id), method: :post, local: false do |form| %>
+  <div>
+    <%= form.text_area :text %>
+  </div>
+  <div class="actions">
+    <%= form.submit "コメントをする" %>
+  </div>
+<% end %>
