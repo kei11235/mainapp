@@ -1,0 +1,84 @@
+<div class="hony-field">
+  <%= image_tag("honey-back.jpg", class:"honey-back") %>
+  <div class="sign-field">
+    <div class="BeeYourBest-icon">
+      <%= link_to image_tag("BeeYourBest_背景透明.png", class:"BeeYourBestBee-icon"), "/" %>
+    </div>
+    <div class="registration">
+      イイねしてる目標
+    </div>
+
+    <div class="registration-main">
+      <div class='form-wrap4'>
+        <div class="goals-show-field">
+          <% if @likes.present? %>
+            <% @likes.each do |like| %>
+              <div class="goal-indexlike-field">
+                <div class="indexlike">
+                  <%= link_to goal_path(like.goal.id), class:"goal-index-path" do %>
+                    <div class="goal-show-grop">
+                      <div class='goal-show-text-wrap'>
+                        <label class="goal-show-text">name：</label>
+                        <div class="goal-show-date"><%= like.goal.user.nickname%></div>
+                      </div>
+                    </div>
+                    <div class="goal-show-grop">
+                      <div class='goal-show-text-wrap'>
+                        <label class="goal-show-text">目標：</label>
+                        <div class="goal-show-target"><%= like.goal.target %></div>
+                      </div>
+                    </div>
+                    <% if like.goal.reason.present? %>
+                      <div class="goal-show-grop">
+                        <div class='goal-show-text-wrap'>
+                          <label class="goal-show-text">理由：</label>
+                          <div class="goal-show-date"><%= like.goal.reason %></div>
+                        </div>
+                      </div>
+                    <% end %>
+                    <div class="goal-show-grop">
+                      <div class='goal-show-text-wrap'>
+                        <label class="goal-show-text">期日：</label>
+                        <div class="goal-show-date"><%= like.goal.time.strftime("%Y-%m-%d %H:%M:%S") + "　まで" %></div>
+                      </div>
+                    </div>
+                    <div class="goal-show-grop">
+                      <div class='goal-show-text-wrap'>
+                        <label class="goal-show-text">達成率：</label>
+                        <div class="goal-show-date2"><%= like.goal.achievement %></div>
+                        %
+                      </div>
+                    </div>
+                  <% end %>
+                  <div class="likes-content-field">
+                    <div id="likes_buttons_<%= like.goal.id %>" class="likes-button">
+                      <%= render partial: 'likes/like', locals: { goal: like.goal} %>
+                    </div>
+                    <div class="comment-box">
+                      <%= link_to "メッセージ", goal_comments_path(like.goal.id), class: "task-submit" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="nothing-indexlike">
+              <div class="balloon3">
+                <p>まだ、イイねしてる目標がないよ！</p>
+              </div>
+              <div class="Bee-icon-left">
+                <%= image_tag "125012.png", class:"Bee-icon-index" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="form-bottom5">
+          <%= link_to 'トップページに戻る！', "/", class:"btn btn-border-shadow btn-border-shadow--radius" %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

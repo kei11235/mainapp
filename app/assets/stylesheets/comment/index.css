@@ -1,5 +1,5 @@
 .comment-field {
-  margin: 20px 30px;
+  margin: 20px 30px 10px;
   padding: 10px;
   border: 1px solid #594F21;
   overflow: scroll;
@@ -36,7 +36,7 @@
   position: absolute;
 }
 .comment-form-field {
-  margin: 10px 30px 20px;
+  margin: 20px 30px;
   /* padding: 10px; */
 }
 .comment-form {
@@ -54,7 +54,7 @@
   width: 6em;
   color: #FCF8E6;
   background-color: #594F21;
-  border-radius: 20px;
+  border-radius: 30px;
   cursor: pointer;
 }
 .comment-submit:hover {

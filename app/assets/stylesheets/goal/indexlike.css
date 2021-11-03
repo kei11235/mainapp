@@ -1,0 +1,76 @@
+.goal-indexlike-field {
+  padding:20px 0 ;
+  border-bottom: 3px dashed #594F21;
+}
+.indexlike {
+  transition: all 0.5s;
+}
+.indexlike:hover {
+  transform: scale(1.05, 1.05);
+}
+.nothing-indexlike {
+  height: 50vh;
+  margin: 50px auto;
+  text-align: center;
+}
+.balloon3 {
+  position: relative;
+  display: inline-block;
+  margin: 3em 1em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #594F21;
+  font-size: 2em;
+  border: solid 3px #594F21;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.balloon3:before {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  margin-left: 92px;
+  border: 12px solid transparent;
+  border-top: 12px solid #FCF8E6;
+  z-index: 2;
+}
+.balloon3:after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  margin-left: 90px;
+  border: 14px solid transparent;
+  border-top: 14px solid #594F21;
+  z-index: 1;
+}
+.balloon3 p {
+  margin: 0;
+  padding: 0;
+}
+.Bee-icon-left {
+  margin-left: 300px;
+}
+.Bee-icon-index {
+  width: 200px;
+}
+.index2-like-user {
+  /* border: 1px solid #594F21; */
+}
+.test {
+  line-height: 2em;
+}
+.goal-indexlike-path {
+  color: #594F21;
+  text-decoration: none;
+  border: 1px solid #594F21;
+  padding: 0.2em;
+  margin-bottom: 1em;
+  white-space: nowrap;
+  transition: all 0.5s;
+}
+.goal-indexlike-path:hover {
+  font-size: 1.3em;
+}

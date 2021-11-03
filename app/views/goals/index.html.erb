@@ -8,6 +8,10 @@
       <% if user_signed_in? %>
 
         <% if @goal.present? %>
+          <% if @goal.count > 1 %>
+            <div class=left-triangle>◀</div>
+            <div class=right-triangle>▶</div>
+          <% end %>
           <div class="mygoal-field">
             <% @goal.each do |goal| %>
               <div class="goal-card">
@@ -92,13 +96,11 @@
             <span>
               <%= goal.target %>
             </span>
-
             <div id="limit" class="limit">
               目標期日：
               <span>
                 <%= goal.time.strftime("%Y-%m-%d %H:%M:%S") %>
               </span>
-
               <div class="likes-content-field">
                 <div id="likes_buttons_<%= goal.id %>" class="likes-button">
                   <%= render partial: 'likes/like', locals: { goal: goal} %>
@@ -107,7 +109,6 @@
                   <%= link_to "メッセージ", goal_comments_path(goal.id), class: "task-submit" %>
                 </div>
               </div>
-
             </div>
 
             <%= link_to goal_path(goal.id), class:"goal-index-path" do %>

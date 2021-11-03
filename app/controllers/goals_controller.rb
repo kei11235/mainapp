@@ -1,7 +1,6 @@
 class GoalsController < ApplicationController
 
   def index
-    # @goals = Goal.all
     @q = Goal.ransack(params[:q])
     @results = @q.result(distinct: true).order('achievement DESC')
     if user_signed_in?
@@ -12,7 +11,7 @@ class GoalsController < ApplicationController
   def show
     @goal = Goal.find(params[:id])
     @user = @goal.user
-    @goals = @user.goals.all
+    @goals = @user.goals
   end
 
   def new
@@ -34,7 +33,7 @@ class GoalsController < ApplicationController
 
   def update
     @goal = Goal.find(params[:id])
-    if @goal.update(goal_params)
+    if @goal.update(goal_params2)
       redirect_to root_path
     else
       render :edit
@@ -47,10 +46,24 @@ class GoalsController < ApplicationController
     redirect_to root_path
   end
 
+  def indexlike1
+    @likes = current_user.likes.order('created_at DESC')
+  end
+
+  def indexlike2
+    @goals = current_user.goals
+  end
+
+
+
   private
   
   def goal_params
     params.require(:goal).permit(:target, :reason, :time).merge(user_id: current_user.id, achievement: 0, like: 0)
+  end
+
+  def goal_params2
+    params.require(:goal).permit(:target, :reason, :time)
   end
 
 end

@@ -26,10 +26,10 @@ function time() {
         counter.setAttribute("style", "border-bottom: dashed 4px red;")
       } else if (d3 > 0) {
         counter.innerHTML = "あと、" + d4_Day + "日" + (d5_Hour < 10 ? '0' + d5_Hour : d5_Hour) + "時間" + (d6_Minute < 10 ? '0' + d6_Minute : d6_Minute) + "分" + (d7_Sec < 10 ? '0' + d7_Sec : d7_Sec) + "秒！";
-        counter.setAttribute("style", "border-bottom: dashed 4px #FDCE00;")
+        counter.setAttribute("style", "border-bottom: dashed 4px #594F21;")
       } else {
         counter.innerHTML = null
-        counter.removeAttribute("style", "border-bottom: dashed 4px #FDCE00;")
+        counter.removeAttribute("style", "border-bottom: dashed 4px #594F21;")
         counter.removeAttribute("style", "border-bottom: dashed 4px red;")
       }
       setTimeout(time_limit,1000);

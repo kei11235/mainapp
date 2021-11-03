@@ -108,8 +108,8 @@ a.btn-flat:hover:before {
 
 /* footerボタン */
 .footer-button > .btn {
-  margin-right: 15px;
-  font-size: 0.9rem;
+  margin-right: 20px;
+  font-size: 0.8rem;
 }
 
 /* deviseボタン */

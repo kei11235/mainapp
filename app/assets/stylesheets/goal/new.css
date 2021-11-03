@@ -1,5 +1,6 @@
 .form-wrap4 {
   width: 60%;
+  min-height: 60vh;
   padding-bottom: 20px;
   background-color: #FCF8E6;
   opacity: 0.85;

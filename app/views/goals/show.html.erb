@@ -7,8 +7,6 @@
     <div class="registration">
       <%= "#{@user.nickname}　さんの情報"%>
     </div>
-    
-
 
     <div class="registration-main">
       <div class='form-wrap4'>
@@ -53,15 +51,19 @@
                 </div>
               </div>
               <div class="goal-show-grop">
-                <% num = (goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001)) * 100 %>
                 <div class='goal-show-text-wrap'>
                   <label class="goal-show-text">達成率：</label>
-                  <div class="goal-show-date2"><%= "#{num.ceil(1)}" %></div>
+                  <div class="goal-show-date2"><%= goal.achievement %></div>
                   %
                 </div>
               </div>
-              <div id="likes_buttons_<%= goal.id %>" class="likes-button">
-                <%= render partial: 'likes/like', locals: { goal: goal} %>
+              <div class="likes-content-field">
+                <div id="likes_buttons_<%= goal.id %>" class="likes-button">
+                  <%= render partial: 'likes/like', locals: { goal: goal} %>
+                </div>
+                <div class="comment-box">
+                  <%= link_to "メッセージ", goal_comments_path(goal.id), class: "task-submit" %>
+                </div>
               </div>
             </div>
 

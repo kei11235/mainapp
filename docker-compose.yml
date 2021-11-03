@@ -2,28 +2,28 @@ version: '3'
 
 services:
   # =========ローカルと本番切り替え===========
-  # db:
-  #   platform: linux/x86_64
-  #   image: mysql:5.7
-  #   networks:
-  #     - mainnet2
-  #   volumes:
-  #     - db-data:/var/lib/mysql
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: kumatabetai1107
-  #     MYSQL_USER: user
-  #     MYSQL_PASSWORD: kumatabetai1107
-  #     MYSQL_DATABASE: mainapp_development
+  db:
+    platform: linux/x86_64
+    image: mysql:5.7
+    networks:
+      - mainnet2
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: kumatabetai1107
+      MYSQL_USER: user
+      MYSQL_PASSWORD: kumatabetai1107
+      MYSQL_DATABASE: mainapp_development
   # ======================================
 
   app:
     build: .
     # Dockerfileのあるディレクトリを指定
     # # =========ローカルと本番切り替え===========
-    command: bundle exec puma -C config/puma.rb -e production
-    # command: bundle exec puma -C config/puma.rb
-    # depends_on:
-    #   - db
+    # command: bundle exec puma -C config/puma.rb -e production
+    command: bundle exec puma -C config/puma.rb
+    depends_on:
+      - db
     # ======================================
     networks:
       - mainnet2
