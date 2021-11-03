@@ -2,7 +2,7 @@ class GoalsController < ApplicationController
 
   def index
     @q = Goal.ransack(params[:q])
-    @results = @q.result(distinct: true).order('achievement DESC')
+    @results = @q.result(distinct: true).page(params[:page]).per(10).order('achievement DESC')
     if user_signed_in?
       @goal = current_user.goals.order('created_at DESC')
     end

@@ -1,17 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Bitter);
 
-.first,
-.second,
-.third {
+.firstb,
+.secondb,
+.thirdb {
   height: 100%;
   width: 100%;
   position: absolute;
 }
-.second,
-.third {
+.secondb,
+.thirdb {
   opacity: 0;
 }
-.first {
+.firstb {
   animation: first 10s infinite;
   background: linear-gradient(#5ff8ca, #60e08c);
   z-index: 10;
@@ -29,7 +29,7 @@
     90% {opacity: 0.8;}
     100% {opacity: 1.0;}
   }
-.second {
+.secondb {
   animation: second 10s infinite; animation-delay: 2s;
   background: linear-gradient(#19eaa6, #00a1f0);
   z-index: 20;
@@ -47,7 +47,7 @@
     90% {opacity: 0.2;}
     100% {opacity: 0;}
   }
-.third {
+.thirdb {
   animation: third 10s infinite;
   animation-delay: 8s;
   background: linear-gradient(#aab7f8, #ff75c6);

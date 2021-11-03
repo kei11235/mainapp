@@ -1,0 +1,20 @@
+.first,
+.next,
+.page,
+.gap,
+.pagination,
+.prev,
+.last {
+  color: #FDCE00;
+  text-decoration: none;
+}
+.first a,
+.next a,
+.page a,
+.gap a,
+.pagination a,
+.prev a,
+.last a {
+  color: #FDCE00;
+  text-decoration: none;
+}

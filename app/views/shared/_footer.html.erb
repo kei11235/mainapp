@@ -5,5 +5,8 @@
       <%= link_to 'イイねされてる目標', indexlike2_goals_path, class:"btn btn-border-shadow btn-border-shadow--radius" %>
     <% end %>
   </div>
-  <div class="copywriter">© 2021 Kei Tamoto</div>
+  <div class="footer-page">
+    <%= paginate @results %>
+    <div class="copywriter">© 2021 Kei Tamoto</div>
+  </div>
 </footer>
