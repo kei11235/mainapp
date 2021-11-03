@@ -1,9 +1,54 @@
-<% comments.each do |comment| %>
-  <% unless comment.id.nil? %>
-    <%# <p><%= link_to "#{comment.user.name}さん", user_path(comment.user.id) %></p> %>
-    <p>コメント：<%= comment.text %></p>
-    <% if comment.user == current_user %>
-      <p><%= link_to 'コメントを削除する', goal_comment_path(comment.goal_id, comment.id), method: :delete, remote: true %></p>
-    <% end %>
+<% comments.each do |c| %>
+  <% color_s = ["#EF845C", "#F9C270", "#FFF67F", "#C1DB81", "#EF858C", "#69BD83", "#EE87B4", "#61C1BE", "#BA79B1", "#6C9BD2", "#54C3F1"] %>
+  <% if current_user.id == c.user.id%>
+    <div class="mycomment-field-box<%= c.id %>">
+      <style>
+        <%= ".mycomment-field-box#{c.id}" %> {
+          width: 300px;
+          padding: 15px;
+          margin: 2em;
+          color: #000;
+          transform: rotate(<%= rand(-2.0..2.0)%>deg);
+          word-break: break-all;
+          margin-left: 430px;
+          background: <%= color_s[rand(0..10)] %>;
+          position: relative;
+        }
+      </style>
+  <% else %>
+    <div class="yourcomment-field-box<%= c.id %>">
+      <style>
+        <%= ".yourcomment-field-box#{c.id}" %> {
+          width: 300px;
+          padding: 15px;
+          margin: 2em;
+          color: #000;
+          transform: rotate(<%= rand(-2.0..2.0)%>deg);
+          word-break: break-all;
+          background: <%= color_s[rand(0..10)] %>;
+          position: relative;
+        }
+      </style>
   <% end %>
+      <% if current_user.id == (c.user.id || c.goal.user.id) %>
+        <p><%= link_to '×', goal_comment_path(c.goal_id, c.id), method: :delete, class:"comment-batu", remote: true %></p>
+      <% end %>
+      <div class="comment-box-tape<%= c.id %>"></div>
+        <style>
+          <%=".comment-box-tape#{c.id}"%> {
+            width: <%= rand(30.0..60.0)%>%;
+            height: 35px;
+            margin: -25px auto 0;
+            border: 1px solid #594F21;
+            background-color: <%= color_s[rand(0..10)] %>;
+            transform: rotate(<%= rand(-4.0..2.0)%>deg);
+            opacity: 0.5;
+          }
+        </style>
+      <p class="comment-box-title"><%= c.text %></p>
+      <p class="comment-box-sub"><%= l c.created_at %></p>
+      <p class="comment-box-sub">
+      <%= link_to "#{c.user.nickname} さん", goal_path(c.user.goals.first.id), class:"comment-none" %>
+      </p>
+    </div>
 <% end %>

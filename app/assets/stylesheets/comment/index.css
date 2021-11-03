@@ -4,7 +4,7 @@
   border: 1px solid #594F21;
   overflow: scroll;
   scroll-snap-align: end;
-  max-height: 500px;
+  max-height: 520px;
 }
 .c-box {
   display: flex;
@@ -27,4 +27,36 @@
 .comment-none {
   text-decoration: none;
   color: #000;
+}
+.comment-batu {
+  text-decoration: none;
+  color: #404040;
+  font-size: 1.2em;
+  font-weight: bold;
+  position: absolute;
+}
+.comment-form-field {
+  margin: 10px 30px 20px;
+  /* padding: 10px; */
+}
+.comment-form {
+  display: flex;
+  align-items: flex-end;
+}
+.form-message {
+  height: 4em;
+  width: 100%;
+  padding: 0.5em 1em;
+}
+.comment-submit {
+  margin-left: 5px;
+  height: 4em;
+  width: 6em;
+  color: #FCF8E6;
+  background-color: #594F21;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.comment-submit:hover {
+  opacity: 0.5;
 }
