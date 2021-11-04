@@ -9,11 +9,11 @@
     </div>
 
     <div class="registration-main">
-      <div class='form-wrap5'>
+      <div class='form-wrap'>
 
         <%= form_with(model: [@goal, @task], url: goal_tasks_path(params[:goal_id]), method: :post, id: "form", local: true) do |f| %>
           <div class="task-form">
-            <div class="form-group5">
+            <div class="form-group">
               <div class='form-text-wrap'>
                 <label class="form-text">
                   <p>・目標を細かくしたタスクで、「やることリスト」を作ろう！</p>
@@ -27,9 +27,8 @@
           </div>
         <% end %>
 
-        <div class="form-top5">
-
-          <div class="form-left5">
+        <div class="form-top">
+          <div class="form-task-left">
             <div class="task-field">
               <div class="task-main-todo">
                 やることリスト！
@@ -47,7 +46,7 @@
             </div>
           </div>
 
-          <div class="form-middle5">
+          <div class="form-task-middle">
             <div class="task-field">
               <div class="task-main-todo">
                 完了したこと
@@ -65,21 +64,9 @@
             </div>
           </div>
 
-          <div class="form-right5">
-            <div class="bou-index" >
-              <div class="holder<%= @goal.id %>">
-                <style>
-                  <%= ".holder#{@goal.id}" %> {
-                    width: 100%;
-                    height: <%= @goal.achievement %>%;
-                    position: relative;
-                    z-index: 1;
-                  }
-                </style>
-                <div class="first"></div>
-                <div class="second"></div>
-                <div class="third"></div>
-              </div>
+          <div class="form-task-right">
+            <div class="allbou-index" >
+              <%= render partial: "shared/bou", locals: { goal: @goal } %>
             </div>
             <div class="achievement">
               達成率
@@ -89,10 +76,9 @@
               %
             </div>
           </div>
-
         </div>
 
-        <div class="form-bottom5">
+        <div class="form-bottom-top">
           <%= link_to '入力完了！', "/", class:"btn btn-border-shadow btn-border-shadow--radius" %>
         </div>
 

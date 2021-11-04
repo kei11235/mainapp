@@ -1,7 +1,6 @@
 .form-wrap-mini {
   width: 50%;
-  height: 50vh;
-  margin-top: 5vh;
+  margin-top: 3vh;
   padding-bottom: 20px;
   background-color: #FCF8E6;
   opacity: 0.85;
@@ -17,7 +16,7 @@
 }
 .form-bottom-mini {
   margin-top: 5vh;
-  margin: 6vh 2vw;
+  margin: 6vh 2vw 3vh;
   display: flex;
   justify-content: center;
   align-items: center;

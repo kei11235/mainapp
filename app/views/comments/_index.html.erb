@@ -4,13 +4,14 @@
     <div class="mycomment-field-box<%= c.id %>">
       <style>
         <%= ".mycomment-field-box#{c.id}" %> {
-          width: 300px;
+          width: 350px;
+          min-height: 150px;
           padding: 15px;
           margin: 2em;
           color: #000;
           transform: rotate(<%= rand(-2.0..2.0)%>deg);
           word-break: break-all;
-          margin-left: 430px;
+          margin-left: 510px;
           background: <%= color_s[rand(0..10)] %>;
           position: relative;
         }
@@ -19,7 +20,8 @@
     <div class="yourcomment-field-box<%= c.id %>">
       <style>
         <%= ".yourcomment-field-box#{c.id}" %> {
-          width: 300px;
+          width: 350px;
+          min-height: 150px;
           padding: 15px;
           margin: 2em;
           color: #000;
@@ -34,21 +36,21 @@
         <p><%= link_to '×', goal_comment_path(c.goal_id, c.id), method: :delete, class:"comment-batu", remote: true %></p>
       <% end %>
       <div class="comment-box-tape<%= c.id %>"></div>
-        <style>
-          <%=".comment-box-tape#{c.id}"%> {
-            width: <%= rand(30.0..60.0)%>%;
-            height: 35px;
-            margin: -25px auto 0;
-            border: 1px solid #594F21;
-            background-color: <%= color_s[rand(0..10)] %>;
-            transform: rotate(<%= rand(-4.0..2.0)%>deg);
-            opacity: 0.5;
-          }
-        </style>
+      <style>
+        <%=".comment-box-tape#{c.id}"%> {
+          width: <%= rand(30.0..60.0)%>%;
+          height: 35px;
+          margin: -25px auto 0;
+          border: 1px solid #594F21;
+          background-color: <%= color_s[rand(0..10)] %>;
+          transform: rotate(<%= rand(-4.0..2.0)%>deg);
+          opacity: 0.5;
+        }
+      </style>
       <p class="comment-box-title"><%= c.text %></p>
       <p class="comment-box-sub"><%= l c.created_at %></p>
       <p class="comment-box-sub">
-      <%= link_to "#{c.user.nickname} さん", goal_path(c.user.goals.first.id), class:"comment-none" %>
+        <%= link_to "#{c.user.nickname} さん", goal_path(c.user.goals.first.id), class:"comment-none" %>
       </p>
     </div>
 <% end %>

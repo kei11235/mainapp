@@ -16,12 +16,13 @@
   white-space: nowrap;
 }
 .goal-user-name {
-  display: flex;
-  justify-content: center;
+  text-align: start;
 }
 .goals-show-field {
   width: 90%;
   margin: 0 auto;
+  max-height: 500px;
+  overflow: scroll;
 }
 .goal-show-field {
   padding:20px 0 ;

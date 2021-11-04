@@ -9,7 +9,7 @@
     </div>
 
     <div class="registration-main">
-      <div class='form-wrap4'>
+      <div class='form-wrap-mini'>
 
         <div class="goal-show-user-tag">
           <div class="goal-user-show-name">
@@ -22,7 +22,7 @@
           <% if @user.effort.present? %>
             <div class="goal-user-name">
               <div class="goal-user-show-effort">がんばりたいこと！：</div>
-              <div class="user-tag-name"><%= @user.effort %></div>
+              <div><%= @user.effort %></div>
             </div>
           <% end %>
         </div>
@@ -66,16 +66,15 @@
                 </div>
               </div>
             </div>
-
           <% end %>
         </div>
 
-        <div class="form-bottom5">
+        <div class="form-bottom-top">
           <%= link_to 'トップページに戻る！', "/", class:"btn btn-border-shadow btn-border-shadow--radius" %>
         </div>
 
       </div>
-
     </div>
+
   </div>
 </div>

@@ -1,3 +1,12 @@
+.form-wrap-middle {
+  width: 70%;
+  margin-top: 3vh;
+  padding-bottom: 20px;
+  background-color: #FCF8E6;
+  opacity: 0.85;
+  box-shadow: 6px 6px 4px #594F21;
+  margin-bottom: 30px;
+}
 .comment-field {
   margin: 20px 30px 10px;
   padding: 10px;

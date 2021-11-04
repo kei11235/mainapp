@@ -4,6 +4,7 @@
 }
 .indexlike {
   transition: all 0.5s;
+  padding: 20px;
 }
 .indexlike:hover {
   transform: scale(1.05, 1.05);
@@ -13,6 +14,35 @@
   margin: 50px auto;
   text-align: center;
 }
+.index-line-height {
+  border: 1px solid #594F21;
+  max-height: 7em;
+  overflow: scroll;
+}
+.index-line-height-user {
+  padding-left: 10px;
+  color: #FCF8E6;
+  background-color: #594F21;
+}
+.index-line-height-like {
+  padding: 10px;
+  line-height: 2em;
+}
+.goal-indexlike-path {
+  color: #594F21;
+  text-decoration: none;
+  border: 1px solid #594F21;
+  padding: 0.2em;
+  margin-bottom: 1em;
+  white-space: nowrap;
+  transition: all 0.5s;
+}
+.goal-indexlike-path:hover {
+  font-size: 1.3em;
+}
+
+
+/* 吹き出し */
 .balloon3 {
   position: relative;
   display: inline-block;
@@ -55,30 +85,4 @@
 }
 .Bee-icon-index {
   width: 200px;
-}
-.index-line-height {
-  border: 1px solid #594F21;
-  max-height: 7em;
-  overflow: scroll;
-}
-.index-line-height-user {
-  padding-left: 10px;
-  color: #FCF8E6;
-  background-color: #594F21;
-}
-.index-line-height-like {
-  padding: 10px;
-  line-height: 2em;
-}
-.goal-indexlike-path {
-  color: #594F21;
-  text-decoration: none;
-  border: 1px solid #594F21;
-  padding: 0.2em;
-  margin-bottom: 1em;
-  white-space: nowrap;
-  transition: all 0.5s;
-}
-.goal-indexlike-path:hover {
-  font-size: 1.3em;
 }

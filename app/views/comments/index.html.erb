@@ -13,7 +13,7 @@
     </div>
 
     <div class="registration-main">
-      <div class='form-wrap4'>
+      <div class='form-wrap-middle'>
         <% if current_user.id != @user.id %>
           <div class="goal-show-user-tag">
             <div class="goal-user-show-name">
@@ -93,7 +93,7 @@
           <%= render partial: 'comments/form', locals: { comment: @comment, goal: @goal } %>
         </div>
 
-        <div class="form-bottom5">
+        <div class="form-bottom-top">
           <%= link_to 'トップページに戻る！', "/", class:"btn btn-border-shadow btn-border-shadow--radius" %>
         </div>
 

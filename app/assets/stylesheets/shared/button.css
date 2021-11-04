@@ -171,7 +171,7 @@ div.btn-border-shadow:hover:before {
 }
 
 /* taskボタン */
-.form-bottom5 > .btn {
+.form-bottom-top > .btn {
   margin-top: 0.5em;
   font-size: 2rem;
 }
