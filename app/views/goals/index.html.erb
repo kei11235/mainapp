@@ -4,7 +4,6 @@
   <%= image_tag("yellow-back.png", class:"left-goal")%>
   <div class="left-absolute">
     <div class="left-size">
-
       <% if user_signed_in? %>
 
         <% if @goal.present? %>
@@ -37,11 +36,9 @@
                 </div>
                 <div class="bou-index-field">
                   <div class="bou-goal-field2">
-                    
                     <div class="allbou-index" >
                       <%= render partial: "shared/bou", locals: { goal: goal } %>
                     </div>
-
                     <div class="achievement">
                       達成率
                       <span>
@@ -61,35 +58,33 @@
               </div>
             <% end %>
           </div>
-            <%= link_to '新しく目標を作る！　　', new_goal_path, class:"btn btn-flat" %>
-
-          <% else %>
-            <div class="left-box">
-              <p>まずは</p>
-              <p>　</p>
-              <p>目標を作ろう</p>
-            </div>
-            <%= link_to '新しく目標を作る！　　', new_goal_path, class:"btn btn-flat" %>
-          <% end %>
+          <%= link_to '新しく目標を作る！　　', new_goal_path, class:"btn btn-flat" %>
 
         <% else %>
           <div class="left-box">
-            <p>みんなと</p>
-            <p>頑張る</p>
-            <p>応援サイト</p>
+            <p>まずは</p>
+            <p>　</p>
+            <p>目標を作ろう</p>
           </div>
-          <%= link_to '今すぐ始める！　　>', new_user_registration_path, class:"btn btn-flat" %>
+          <%= link_to '新しく目標を作る！　　', new_goal_path, class:"btn btn-flat" %>
         <% end %>
 
+      <% else %>
+        <div class="left-box">
+          <p>みんなと</p>
+          <p>頑張る</p>
+          <p>応援サイト</p>
+        </div>
+        <%= link_to '今すぐ始める！　　>', new_user_registration_path, class:"btn btn-flat" %>
+
+      <% end %>
     </div>
   </div>
-
 
   <div class="right-goal">
     <div class="allgoal-field">
       <% @results.each do |goal| %>
-
-<%# トップページには5日前までのデータしか残さない %>
+        <%# トップページには5日前までのデータしか残さない %>
         <% if goal.time > DateTime.now.ago(5.day) %>
           <div class="allgoal-card">
             目標：
@@ -110,11 +105,9 @@
                 </div>
               </div>
             </div>
-
             <%= link_to goal_path(goal.id), class:"goal-index-path" do %>
               <div class="bou-index-field">
                 <div class="bou-goal-field2">
-
                   <div class="allbou-index" >
                     <%= render partial: "shared/bou", locals: { goal: goal } %>
                   </div>
@@ -129,19 +122,18 @@
               </div>
             <% end %>
 
-              <div class="goal-user-tag">
-                <div class=goal-user-name>
-                  <div>name：</div>
-                  <div class="user-tag-name"><%= goal.user.nickname%></div>
-                </div>
-                <div class="user-tag"><%= goal.user.age.name %></div>
-                <div class="user-tag"><%= goal.user.sex.name %></div>
-                <div class="user-tag"><%= goal.user.profession.name %></div>
+            <div class="goal-user-tag">
+              <div class=goal-user-name>
+                <div>name：</div>
+                <div class="user-tag-name"><%= goal.user.nickname%></div>
               </div>
+              <div class="user-tag"><%= goal.user.age.name %></div>
+              <div class="user-tag"><%= goal.user.sex.name %></div>
+              <div class="user-tag"><%= goal.user.profession.name %></div>
+            </div>
 
           </div>
         <% end %>
-
       <% end %>
     </div>
   </div>

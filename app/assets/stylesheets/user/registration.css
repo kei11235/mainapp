@@ -15,24 +15,22 @@
 .sign-field > .BeeYourBest-icon {
   position: absolute;
   width: 200px;
+  filter: brightness(95%);
 }
-.registration {
+.main-name {
   font-family: "M PLUS Rounded 1c";
   text-align: center;
   font-size: 40px;
   font-weight: bold;
 }
-
 .registration-main {
   width: 100%;
-  min-width: 800px;
   display: flex;
   justify-content: center;
   padding-top: 3vh;
 }
 .form-wrap {
   width: 85%;
-  height: 84vh;
   padding-bottom: 20px;
   margin-bottom: 30px;
   background-color: #FCF8E6;
@@ -41,7 +39,6 @@
 }
 
 .form-top {
-  height: 70%;
   display: flex;
   justify-content: space-around;
 }
@@ -111,7 +108,6 @@
 }
 
 .form-bottom {
-  height: 30%;
   margin: 2vh 2vw;
   display: flex;
   justify-content: center;

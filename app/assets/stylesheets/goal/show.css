@@ -19,13 +19,6 @@
   display: flex;
   justify-content: center;
 }
-.registration-main {
-  width: 100%;
-  min-width: 800px;
-  display: flex;
-  justify-content: center;
-  padding-top: 3vh;
-}
 .goals-show-field {
   width: 90%;
   margin: 0 auto;

@@ -4,90 +4,86 @@
     <div class="BeeYourBest-icon">
       <%= link_to image_tag("BeeYourBest_背景透明.png", class:"BeeYourBestBee-icon"), "/" %>
     </div>
-    <div class="registration">
+    <div class="main-name">
       プロフィール
     </div>
 
     <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
-    <div class='form-wrap3'>
+      <div class='form-wrap'>
 
-      <div class="form-top">
+        <div class="form-top">
+          <div class="form-left">
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <label class="form-text">ニックネーム</label>
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) オオスズメバチ", maxlength:"20", autofocus: true %>
+            </div>
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <label class="form-text">メールアドレス</label>
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
+            </div>
+            <div class="talk">
+              <figure class="talk-Limg">
+                <%= image_tag "125012.png" %>
+              </figure>
+              <div class="talk-Ltxt">
+                <p class="talk-text">編集もできるよ！</p>
+              </div>
+            </div>
+          </div>
 
-        <div class="form-left">
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">ニックネーム</label>
-              <span class="indispensable">必須</span>
+          <div class="form-middle">
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <label class="form-text">年齢</label>
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box", id:"user-age"}) %>
             </div>
-            <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) オオスズメバチ", maxlength:"20", autofocus: true %>
-          </div>
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">メールアドレス</label>
-              <span class="indispensable">必須</span>
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <label class="form-text">性別</label>
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"user-sex"}) %>
             </div>
-            <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
-          </div>
-          <div class="talk">
-            <figure class="talk-Limg">
-              <%= image_tag "125012.png" %>
-            </figure>
-            <div class="talk-Ltxt">
-              <p class="talk-text">編集もできるよ！</p>
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <label class="form-text">お仕事</label>
+                <span class="indispensable">必須</span>
+              </div>
+              <%= f.collection_select(:profession_id, Profession.all, :id, :name, {}, {class:"select-box", id:"user-profession"}) %>
             </div>
           </div>
-          
+
+          <div class="form-right">
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <label class="form-text">がんばりたいこと！</label>
+                <span class="indispensable">任意</span>
+              </div>
+              <%= f.text_area :effort, class:"form-explanation", id:"form-text", placeholder:"今、頑張りたいこと！（任意 200文字まで）　最近プログラミング言語を学び始めました。ちょうど昨日からJavaScriptの勉強を始めたので頑張っていきたいです！" ,rows:"8" ,maxlength:"200" %>
+            </div>
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <%= render 'shared/error_messages', model: f.object %>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="form-middle">
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">年齢</label>
-              <span class="indispensable">必須</span>
-            </div>
-            <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box", id:"user-age"}) %>
+        <div class="form-bottom">
+          <div class="btn btn-border-shadow btn-border-shadow--radius">
+            　　　　　　　　
+            <%= f.submit "編集を反映する！", class:"form-submit" %>
           </div>
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">性別</label>
-              <span class="indispensable">必須</span>
-            </div>
-            <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"user-sex"}) %>
-          </div>
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">お仕事</label>
-              <span class="indispensable">必須</span>
-            </div>
-            <%= f.collection_select(:profession_id, Profession.all, :id, :name, {}, {class:"select-box", id:"user-profession"}) %>
-          </div>
-        </div>
-
-        <div class="form-right">
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">がんばりたいこと！</label>
-              <span class="indispensable">任意</span>
-            </div>
-            <%= f.text_area :effort, class:"form-explanation", id:"form-text", placeholder:"今、頑張りたいこと！（任意 200文字まで）　最近プログラミング言語を学び始めました。ちょうど昨日からJavaScriptの勉強を始めたので頑張っていきたいです！" ,rows:"8" ,maxlength:"200" %>
-          </div>
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <%= render 'shared/error_messages', model: f.object %>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="form-bottom">
-        <div class="btn btn-border-shadow btn-border-shadow--radius">
-          　　　　　　　　
-          <%= f.submit "編集を反映する！", class:"form-submit" %>
         </div>
       </div>
-
-    </div>
     <% end %>
   </div>
 </div>

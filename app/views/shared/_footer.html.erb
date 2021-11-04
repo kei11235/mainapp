@@ -1,10 +1,10 @@
 <footer class="footer">
-  <div class="footer-button">
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
+    <div class="footer-button">
       <%= link_to 'イイねしてる目標', indexlike1_goals_path, class:"btn btn-border-shadow btn-border-shadow--radius" %>
       <%= link_to 'イイねされてる目標', indexlike2_goals_path, class:"btn btn-border-shadow btn-border-shadow--radius" %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
   <div class="footer-page">
     <%= paginate @results %>
     <div class="copywriter">© 2021 Kei Tamoto</div>
