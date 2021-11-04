@@ -11,7 +11,6 @@
         <%= "#{@user.nickname}　さんへ"%>
       <% end %>
     </div>
-    
 
     <div class="registration-main">
       <div class='form-wrap4'>
@@ -57,10 +56,9 @@
               </div>
             </div>
             <div class="goal-show-grop">
-              <% num = (goal.completions.count / (goal.tasks.count + goal.completions.count  + 0.0001)) * 100 %>
               <div class='goal-show-text-wrap'>
                 <label class="goal-show-text">達成率：</label>
-                <div class="goal-show-date2"><%= "#{num.ceil(1)}" %></div>
+                <div class="goal-show-date2"><%= goal. achievement %></div>
                 %
               </div>
             </div>
@@ -73,9 +71,14 @@
         <div class="comment-field" id="scroll"> 
           <div id="comments_area">
             <% unless @comments.present? %>
-              ここにコメントが表示されます
-              <br>
-              <br>
+              <div class="nothing-indexlike">
+                <div class="balloon3">
+                  <p>まだ、コメントがないよ！</p>
+                </div>
+                <div class="Bee-icon-left">
+                  <%= image_tag "125012.png", class:"Bee-icon-index" %>
+                </div>
+              </div>
             <% end %>
             <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
             <%= render partial: 'comments/index', locals: { comments: @comments } %>

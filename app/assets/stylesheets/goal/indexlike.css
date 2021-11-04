@@ -56,10 +56,18 @@
 .Bee-icon-index {
   width: 200px;
 }
-.index2-like-user {
-  /* border: 1px solid #594F21; */
+.index-line-height {
+  border: 1px solid #594F21;
+  max-height: 7em;
+  overflow: scroll;
 }
-.test {
+.index-line-height-user {
+  padding-left: 10px;
+  color: #FCF8E6;
+  background-color: #594F21;
+}
+.index-line-height-like {
+  padding: 10px;
   line-height: 2em;
 }
 .goal-indexlike-path {

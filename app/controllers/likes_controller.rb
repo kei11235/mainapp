@@ -15,8 +15,9 @@ class LikesController < ApplicationController
   end
 
   private
+
   def like_num
-    num = Like.count
+    num = @goal.likes.count
     @goal.update(like: num)
   end
   

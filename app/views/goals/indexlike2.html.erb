@@ -50,18 +50,21 @@
                     <%= link_to "メッセージ", goal_comments_path(goal.id), class: "task-submit" %>
                   </div>
                 </div>
-                <div class="test">
-                  <% goal.likes.each do |like| %>
-                    <span class="index2-like-user">
-                      <% if like.user.goals.first.present? %>
-                        <%= link_to like.user.nickname, goal_path(like.user.goals.first), class:"goal-indexlike-path" %>
-                      <% else %>
-                        <span class="goal-indexlike-path">
-                          <%= "#{like.user.nickname}（まだ目標がないよ！）" %>
-                        </span>
-                      <% end %>
-                    </span>
-                  <% end %>
+                <div class="index-line-height">
+                  <div class="index-line-height-user">user</div>
+                  <div class="index-line-height-like">
+                    <% goal.likes.each do |like| %>
+                      <span class="index2-like-user">
+                        <% if like.user.goals.first.present? %>
+                          <%= link_to like.user.nickname, goal_path(like.user.goals.first), class:"goal-indexlike-path" %>
+                        <% else %>
+                          <span class="goal-indexlike-path">
+                            <%= "#{like.user.nickname}（まだ目標がないよ！）" %>
+                          </span>
+                        <% end %>
+                      </span>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             <% end %>
@@ -69,7 +72,7 @@
           <% else %>
             <div class="nothing-indexlike">
               <div class="balloon3">
-                <p>まだ、イイねされてる目標がないよ！</p>
+                <p>まだ、作成した目標がないよ！</p>
               </div>
               <div class="Bee-icon-left">
                 <%= image_tag "125012.png", class:"Bee-icon-index" %>
