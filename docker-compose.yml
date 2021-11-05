@@ -36,8 +36,6 @@ services:
       - tmp-data:/mainapp/tmp
       - log-data:/mainapp/log
     # binding.ppry用
-    tty: true
-    stdin_open: true
 
   web:
     build: ./nginx_docker

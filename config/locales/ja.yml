@@ -6,18 +6,27 @@ ja:
         age_id: 年齢
         sex_id: 性別
         profession_id: お仕事
+        effort: がんばりたいこと
       goal:
         target: 目標
         reason: 理由
         achievement: 達成率
         like: イイね数
         time: 期日
+        user: ユーザー
+      like:
+        user: ユーザー
+        goal: 目標
       comment:
         text: コメント
+        user: ユーザー
+        goal: 目標
       task:
         content: タスク
+        goal: 目標
       completion:
         content: タスク
+        goal: 目標
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
