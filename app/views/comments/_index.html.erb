@@ -50,7 +50,13 @@
       <p class="comment-box-title"><%= c.text %></p>
       <p class="comment-box-sub"><%= l c.created_at %></p>
       <p class="comment-box-sub">
-        <%= link_to "#{c.user.nickname} さん", goal_path(c.user.goals.first.id), class:"comment-none" %>
+        <% if c.user.goals.first.present? %>
+          <%= link_to "#{c.user.nickname} さん", goal_path(c.user.goals.first.id), class:"comment-none" %>
+        <% else %>
+          <span class="comment-none">
+            <%= "#{c.user.nickname}（まだ目標がないよ！）" %>
+          </span>
+        <% end %>
       </p>
     </div>
 <% end %>

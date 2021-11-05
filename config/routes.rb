@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   root to: 'goals#index'
   resources :goals do
     resources :tasks
-    resources :completions
+    resources :completions do
+      member do
+        delete 'completiondelete'
+        delete 'movedelete'
+      end
+    end
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:index, :create, :destroy]
     collection do

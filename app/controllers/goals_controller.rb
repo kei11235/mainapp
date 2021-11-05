@@ -1,4 +1,7 @@
 class GoalsController < ApplicationController
+  
+  before_action :move_to_root, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: :index
 
   def index
     @q = Goal.ransack(params[:q])
@@ -64,6 +67,12 @@ class GoalsController < ApplicationController
 
   def goal_params2
     params.require(:goal).permit(:target, :reason, :time)
+  end
+  
+  def move_to_root
+    if current_user.goals.where(id: params[:id]) == []
+      redirect_to root_path
+    end
   end
 
 end

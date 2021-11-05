@@ -35,7 +35,7 @@
                 <div class="task-content">
                   <%= t.content %>
                   <div class="task-delete">
-                    <%= link_to "移動",  goal_completion_path(params[:goal_id], t.id), method: :get, class: "task-submit" %>
+                    <%= link_to "移動",  movedelete_goal_completion_path(params[:goal_id], t.id), method: :delete, class: "task-submit" %>
                     <%= link_to "削除", goal_completion_path(params[:goal_id], t.id), method: :delete, class: "task-submit" %>
                   </div>
                 </div>
@@ -54,7 +54,7 @@
                 <div class="task-content">
                   <%= t.content %>
                   <div class="task-delete">
-                    <%= link_to "削除", edit_goal_completion_path(params[:goal_id], t.id), method: :get, class: "task-submit" %>
+                    <%= link_to "削除", completiondelete_goal_completion_path(params[:goal_id], t.id), method: :delete, class: "task-submit" %>
                   </div>
                 </div>
               <% end %>

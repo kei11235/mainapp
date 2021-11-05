@@ -64,7 +64,7 @@
             <th><%= sort_link(@q, :time, "目標期日") %></th>
             <th><%= sort_link(@q, :achievement, "達成率", default_order: :desc) %></th>
             <th><%= sort_link(@q, :like, "いいね数", default_order: :desc) %></th>
-            <th><%= sort_link(@q, :created_at, "作成順") %></th>
+            <th><%= sort_link(@q, :updated_at, "更新順", default_order: :desc) %></th>
           </tr>
         </div>
       </div>
