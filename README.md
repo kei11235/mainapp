@@ -60,6 +60,8 @@ ER図等を添付。
 | ----------- | ---------- | ------------------------------ |
 | target      | string     | null: false                    |
 | reason      | text       |                                |
+| achievement | integer    |                                |
+| like        | integer    |                                |
 | time        | datetime   | null: false                    |
 | user        | references | null: false, foreign_key: true |
 
