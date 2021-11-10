@@ -1,8 +1,6 @@
 # アプリケーション名 : Bee Your Best
 
-<img src="https://i.gyazo.com/5f307ea4a6b01629e83e72d985a0f1d5.png" width="33%">
-<img src="https://i.gyazo.com/36351a13784f092e196a1475f3ed220c.png" width="33%">
-<img src="https://i.gyazo.com/5c0958be00780c35b5078f89a1b304c1.png" width="33%">
+<img src="https://i.gyazo.com/5f307ea4a6b01629e83e72d985a0f1d5.png" width="33%"><img src="https://i.gyazo.com/36351a13784f092e196a1475f3ed220c.png" width="33%"><img src="https://i.gyazo.com/5c0958be00780c35b5078f89a1b304c1.png" width="33%">
 
 # アプリケーション概要
 人の目標と達成度がわかるWebアプリ。
