@@ -20,7 +20,7 @@
 }
 .goals-show-field {
   width: 90%;
-  margin: 0 auto;
+  margin: 5px auto;
   max-height: 500px;
   overflow: scroll;
 }
