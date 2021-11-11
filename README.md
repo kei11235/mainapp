@@ -43,7 +43,8 @@
 ### グラフのビジュアル
 - 達成度をキレイに可視化することで達成率をユーザーが上昇させたくなるように促す。
 
-[![Image from Gyazo](https://i.gyazo.com/c3de436e7766dcb211dc9a89d98ff157.gif)](https://gyazo.com/c3de436e7766dcb211dc9a89d98ff157)
+<img src="https://i.gyazo.com/c3de436e7766dcb211dc9a89d98ff157.gif" width="70%">
+
 
 ### 目標の検索機能
 ### 目標の並び替え機能
@@ -55,7 +56,8 @@
 ### メッセージ機能
 - ユーザー同士のやり取りをコメントを通じて行うことができる。メッセージは常にランダムに色などが変わる。メッセージのやり取りは非同期通信でやりとりされ、メッセージの削除権限はメッセージを送られた側には全権限、送った側は自分のメッセージのみ削除可能。また、自分のメッセージのみ右側に追加される。
 
-[![Image from Gyazo](https://i.gyazo.com/12187b93cbdbaff5ae3bcdfe5f596cc8.jpg)](https://gyazo.com/12187b93cbdbaff5ae3bcdfe5f596cc8)
+<img src="https://i.gyazo.com/12187b93cbdbaff5ae3bcdfe5f596cc8.jpg" width="70%">
+
 ### メッセージ自動スクロール機能
 - 通常時またはメッセージを送った際は強制的に新しいメッセージが表示される。
 ### イイねに関する機能
