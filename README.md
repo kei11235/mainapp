@@ -72,7 +72,8 @@
 - 最終的には見た目の良いタスク管理を行うことでユーザーの使用感が増すと考えているため、jKanbanなどを用いたタスク処理を行う予定。
 
 # 使用技術
-Ruby / Ruby on Rails / AWS (EC2, RDS, VPC) / Docker / MySQL / GitHub / Visual Studio Code 開発期間：約 4 週間 (2021/10/14~)
+Ruby / Ruby on Rails / AWS (EC2, RDS, VPC) / Docker / MySQL / GitHub / Visual Studio Code
+開発期間：約 4 週間 (2021/10/14~)
 
 # フロントエンド
 | 名称        | 説明                    |
@@ -100,6 +101,7 @@ Ruby / Ruby on Rails / AWS (EC2, RDS, VPC) / Docker / MySQL / GitHub / Visual St
 ・環境開発からデプロイまでDockerを使用しています。
 
 # インフラ構成図
+[![Image from Gyazo](https://i.gyazo.com/0567d66aa151ef5f01b747d86a31da33.png)](https://gyazo.com/0567d66aa151ef5f01b747d86a31da33)
 
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/4830a79e2ee1ae29de4aa0545dc30721.png)](https://gyazo.com/4830a79e2ee1ae29de4aa0545dc30721)
@@ -118,7 +120,6 @@ Ruby / Ruby on Rails / AWS (EC2, RDS, VPC) / Docker / MySQL / GitHub / Visual St
 | effort             | text    |                               |
 
 ### Association
-- has_many :goals, through: :likes
 - has_many :likes
 - has_many :comments
 
@@ -134,7 +135,6 @@ Ruby / Ruby on Rails / AWS (EC2, RDS, VPC) / Docker / MySQL / GitHub / Visual St
 | user        | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :user, through: :likes
 - has_many :likes
 - has_many :comments
 - has_many :tasks
