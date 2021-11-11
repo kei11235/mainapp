@@ -85,7 +85,7 @@
     <div class="allgoal-field">
       <% @results.each do |goal| %>
         <%# トップページには5日前までのデータしか残さない %>
-        <% if goal.time > DateTime.now.ago(5.day) %>
+        <% if goal.time %>
           <div class="allgoal-card">
             目標：
             <span>

@@ -6,14 +6,14 @@ class CommentsController < ApplicationController
   def index
     @goal = Goal.find(params[:goal_id])
     @user = @goal.user
-    @comments = @goal.comments.all
+    @comments = @goal.comments.all.includes(:user)
     @comment = Comment.new
   end
 
   def create
     @comment = Comment.new(commment_params)
     @goal = @comment.goal
-    @comments = @goal.comments.all
+    @comments = @goal.comments.all.includes(:user)
     @user = @goal.user
     if @comment.save
       render :index

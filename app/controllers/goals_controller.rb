@@ -4,8 +4,8 @@ class GoalsController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
-    @q = Goal.ransack(params[:q])
-    @results = @q.result(distinct: true).page(params[:page]).per(10).order('achievement DESC')
+    @q = Goal.where(time: DateTime.now.ago(5.day)..).ransack(params[:q])
+    @results = @q.result(distinct: true).includes(:user, :likes).page(params[:page]).per(10).order('achievement DESC')
     if user_signed_in?
       @goal = current_user.goals.order('created_at DESC')
     end
@@ -14,7 +14,7 @@ class GoalsController < ApplicationController
   def show
     @goal = Goal.find(params[:id])
     @user = @goal.user
-    @goals = @user.goals
+    @goals = @user.goals.includes(:user, :likes)
   end
 
   def new
@@ -50,11 +50,11 @@ class GoalsController < ApplicationController
   end
 
   def indexlike1
-    @likes = current_user.likes.order('created_at DESC')
+    @likes = current_user.likes.includes(goal: :user).order('created_at DESC')
   end
 
   def indexlike2
-    @goals = current_user.goals
+    @goals = current_user.goals.includes(likes: :user)
   end
 
 
