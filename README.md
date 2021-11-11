@@ -101,10 +101,10 @@ Ruby / Ruby on Rails / AWS (EC2, RDS, VPC) / Docker / MySQL / GitHub / Visual St
 ・環境開発からデプロイまでDockerを使用しています。
 
 # インフラ構成図
-[![Image from Gyazo](https://i.gyazo.com/0567d66aa151ef5f01b747d86a31da33.png)](https://gyazo.com/0567d66aa151ef5f01b747d86a31da33)
+<img src="https://i.gyazo.com/0567d66aa151ef5f01b747d86a31da33.png" width="70%">
 
 # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/4830a79e2ee1ae29de4aa0545dc30721.png)](https://gyazo.com/4830a79e2ee1ae29de4aa0545dc30721)
+<img src="https://i.gyazo.com/4830a79e2ee1ae29de4aa0545dc30721.png" width="70%">
 
 # テーブル
 ## users テーブル
