@@ -1,5 +1,5 @@
 <%= form_with model: [goal, comment], url: goal_comments_path(goal.id), method: :post, class:"comment-form", local: false do |form| %>
-  <%= form.text_area :text , class: 'form-message', placeholder: 'コメントをする', maxlength:"100"%>
+  <%= form.text_area :text , class: 'form-message', placeholder: 'メッセージ', maxlength:"100"%>
   <div class="actions">
     <%= form.submit "送信", class:"comment-submit", id:"scroll-submit"%>
   </div>
